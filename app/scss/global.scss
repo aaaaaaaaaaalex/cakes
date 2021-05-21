@@ -1,19 +1,15 @@
-// Прижимаем футер к низу страницы
-html, body{
-	height: 100%;
-}
-.wrapper{
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-}
-.main{
-	flex: 1 0 auto;
-}
-.footer{
-	flex: 0 0 auto;
-}
+// Body
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: $black;
+    overflow-x: hidden;
+    line-height: 1.2;
 
+    &.no-scroll{
+        overflow: hidden;
+    }
+}
 
 
 // Container

@@ -1,4 +1,4 @@
-jQuery(function() {
+document.addEventListener("DOMContentLoaded", function(){
 	function testWebP(callback) {
     var webP = new Image();
     webP.onload = webP.onerror = function () {
@@ -13,4 +13,12 @@ jQuery(function() {
     }
 });
 	
+	// Scale Intro
+	function addClass() {
+		let blockBg = document.querySelector(".intro__wrap--1");
+		blockBg.classList.add("scale-intro");
+		console.log("function job");
+		
+	};
+	setTimeout(addClass, 500);
 });

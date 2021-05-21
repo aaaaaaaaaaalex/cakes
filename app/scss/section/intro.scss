@@ -1,6 +1,63 @@
 .intro{
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1600px;
+	position: relative;
+
 
 	&__inner{
 		
+	}
+	&__wrap{
+		position: absolute;
+
+		width: 100%;
+		height: 900px;
+
+		// @media (max-width: 1600px) {
+		// 	height: 798px;
+		// }
+		// @media (max-width: 1500px) {
+		// 	height: 665px;
+		// }
+
+		&--1{
+			top: 0;
+			right: 0;
+			z-index: -1;
+			
+			max-width: 1352px;
+
+			
+			
+			background: transparent url("../img/intro/intro-cakes.jpg") right/115% no-repeat;
+
+			&.scale-intro{
+				transition: background 3s linear;
+				background: transparent url("../img/intro/intro-cakes.jpg") right/100% no-repeat;
+			}
+			// @media (max-width: 1600px) {
+			// 	background: transparent url("../img/intro/intro-cakes.jpg") right top 0px/1200px no-repeat;
+			// }
+			// @media (max-width: 1500px) {
+			// 	background: transparent url("../img/intro/intro-cakes.jpg") right top 0px/1000px no-repeat;
+			// }
+		}
+		&--2{
+			top: 0;
+			left: 0;
+			z-index: 1;
+			max-width: 949px;
+
+			background: transparent url("../img/intro/intro-polygon.png") left no-repeat;
+
+			// @media (max-width: 1600px) {
+			// 	background: transparent url("../img/intro/intro-polygon.jpg") left top 0px/902px no-repeat;
+			// }
+			// @media (max-width: 1500px) {
+			// 	background: transparent url("../img/intro/intro-polygon.jpg") left top 0px/702px no-repeat;
+			// }
+
+		}
 	}
 }

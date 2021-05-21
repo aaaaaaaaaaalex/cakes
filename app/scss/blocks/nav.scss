@@ -1,3 +1,21 @@
 .nav{
-	
+	&__link{
+		margin-right: 45px;
+
+		font-size: 20px;
+		font-weight: 500;
+		color: $white;
+
+		border-bottom: 1.5px solid transparent;
+
+		transition-duration: 1s;
+		transition-property: border-bottom;
+		transition-delay: 1s;
+
+		&:hover{
+			border-bottom: 1.5px solid $white;
+			
+		}
+		
+	}
 }
