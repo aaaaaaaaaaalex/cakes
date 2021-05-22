@@ -17,22 +17,22 @@
 		padding: 25px 0;
 	}
 	&__title{
-		margin-bottom: 103px;
+		margin-bottom: 120px;
 
 		font-size: 34px;
 		font-weight: 600;
 		color: $black;
 		text-align: center;
 
-		@media ($md) {
-			font-size: 30px;
-		}
-		@media ($sm) {
-			font-size: 22px;
-		}
-		@media ($usm) {
-			font-size: 20px;
-		}
+		// @media ($md) {
+		// 	font-size: 30px;
+		// }
+		// @media ($sm) {
+		// 	font-size: 22px;
+		// }
+		// @media ($usm) {
+		// 	font-size: 20px;
+		// }
 	}
 	&__subtitle{
 		margin-bottom: 30px;

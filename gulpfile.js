@@ -51,7 +51,8 @@ function browserSync() {
     browsersync.init({
         server: {
             baseDir: "./" + project_folder
-        }
+        },
+        notify: false
     });
 };
 
