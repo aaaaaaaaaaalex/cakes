@@ -3,11 +3,13 @@
 	width: 100%;
 	max-width: 1600px;
 	position: relative;
+	height: 900px;
 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 
-	&__inner{
-		
-	}
 	&__wrap{
 		position: absolute;
 
@@ -59,5 +61,27 @@
 			// }
 
 		}
+	}
+	&__inner{
+		position: relative;
+		z-index: 3;
+
+		
+	}
+	&__title{
+		margin-bottom: 20px;
+
+		font-size: 50px;
+		font-weight: 700;
+		color: $white;
+		text-align: left;
+	}
+	&__subtitle{
+		margin-bottom: 25px;
+
+		font-size: 16px;
+		font-weight: 500;
+		color: $white;
+		text-align: left;
 	}
 }
