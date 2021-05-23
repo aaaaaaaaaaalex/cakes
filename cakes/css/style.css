@@ -156,7 +156,15 @@ body.no-scroll {
   text-align: left;
 }
 
+.job__wrap {
+  position: relative;
+  width: 1170px;
+  height: 400px;
+}
+
 .job__item {
+  position: absolute;
+  z-index: 3;
   width: 100%;
   max-width: 160px;
   text-align: center;
@@ -167,6 +175,26 @@ body.no-scroll {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.job__item--1 {
+  top: 0;
+  left: 0;
+}
+
+.job__item--2 {
+  bottom: 0;
+  left: 0;
+}
+
+.job__item--3 {
+  top: 0;
+  left: 50%;
+}
+
+.job__item--4 {
+  bottom: 0;
+  right: 0;
 }
 
 .job__icon-wrap {
@@ -185,6 +213,13 @@ body.no-scroll {
   height: 60px;
   border-radius: 50%;
   background-color: #FD772B;
+}
+
+.job__icon-wrap--order1 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-bottom: 15px;
 }
 
 .job__icon-wrap--order2 {
@@ -247,6 +282,13 @@ body.no-scroll {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  margin-bottom: 15px;
+}
+
+.job__text--order2 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 .footer {
@@ -483,12 +525,13 @@ body.no-scroll {
 }
 
 #canvas {
-  display: none;
+  position: absolute;
+  display: block;
   margin: 0 auto;
   width: 1170px;
-  height: 300px;
+  height: 400px;
   border: 5px solid #000;
-  background-color: #FFDECC;
+  background-color: rgba(255, 222, 204, 0.5);
 }
 
 .tac {

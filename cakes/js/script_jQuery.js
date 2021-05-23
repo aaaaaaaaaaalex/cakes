@@ -26,9 +26,21 @@ document.addEventListener("DOMContentLoaded", function(){
 	let canvas = document.getElementById("canvas");
 	let ctx = canvas.getContext("2d");
 
-	ctx.setLineDash([5, 15]);/*dashes are 5px and spaces are 15px*/
+	canvas.setAttribute("width", "1170px");
+	canvas.setAttribute("height", "400px");
+	
+	ctx.strokeStyle = '#f00';
 	ctx.beginPath();
-	ctx.moveTo(0,100);
-	ctx.lineTo(400, 100);
+	ctx.moveTo(10, 15);
+	ctx.bezierCurveTo(75, 55, 175, 20, 250, 15);
+	ctx.moveTo(10, 15);
+	ctx.quadraticCurveTo(100, 100, 250, 15);
 	ctx.stroke();
+
+	// canvas.height = 
+	// ctx.setLineDash([5, 15]);/*dashes are 5px and spaces are 15px*/
+	// ctx.beginPath();
+	// ctx.moveTo(0,100);
+	// ctx.lineTo(400, 100);
+	// ctx.stroke();
 });
