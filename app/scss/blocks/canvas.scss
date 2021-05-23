@@ -1,0 +1,16 @@
+// .canvas-wrap{
+// 	margin: 0 auto;
+// }
+#canvas{
+	display: none;
+	margin: 0 auto;
+	
+	width: 1170px;
+	height: 300px;
+	border: 5px solid $black;
+	background-color: $beige-light;
+
+	// @media ($lg) {
+	// 	width: 100px;
+	// }
+}

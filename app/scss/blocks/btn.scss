@@ -29,8 +29,8 @@
 		color: $white;
 		background-color: $orange;
 		border-radius: .7em;
-		
-		transition: box-shadow .2s ease-out, color .2s ease-out;
+
+		transition: box-shadow .2s ease-out;
 		&:hover{
 			box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
 		}
