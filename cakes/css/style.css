@@ -525,13 +525,15 @@ body.no-scroll {
 }
 
 .svg {
-  width: 1170px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   background-color: #FFDECC;
 }
 
 .svg__path {
   stroke: black;
+  fill: none;
+  stroke-width: 10px;
 }
 
 #canvas {
@@ -558,7 +560,7 @@ body.no-scroll {
 
 .imgr {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 

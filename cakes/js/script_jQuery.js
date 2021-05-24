@@ -24,21 +24,24 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// Svg
 	let path = document.querySelector(".svg__path");
-	let numPoints = 4;
-	let points = [100, 200, 800, 100];
-	let str = "";
+	// let numPoints = 4;
+	// let points = [10, 40, 100, 50];
+	// let str = "";
 	// str += `M 0 0 V ${points[0]}`;
-	str += `M 0 ${points[0]}`;
+	// str += `M 0 ${points[0]}`;
 
 
-	for (let i=0; i < numPoints-1; i++) {
-		let p = i+1/(numPoints-1)*100;
-		let cp = p - (1/(numPoints-1)*100)/2;
-		str += `C ${cp} ${points[i]} ${cp} ${points[i+1]} ${p} ${points[i+1]}`;
-	};
+	// for (let i=0; i < numPoints-1; i++) {
+	// 	let p = i+1/(numPoints-1)*1000;
+	// 	let cp = p - (1/(numPoints-1)*1000)/2;
+	// 	str += `C ${cp} ${points[i]} ${cp} ${points[i+1]} ${p} ${points[i+1]}`;
+	// };
 	// str += "V 0 H 0"
 
-	path.setAttribute("d", str);
+	// console.log(str);
+	
+
+	path.setAttribute("d", "M 0 0C 50 0 50 100 100 100C 150 100 150 0 200 0C 250 0 250 100 300 100" );
 
 
 
