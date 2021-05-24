@@ -524,9 +524,19 @@ body.no-scroll {
   color: #FD772B;
 }
 
+.svg {
+  width: 1170px;
+  height: 400px;
+  background-color: #FFDECC;
+}
+
+.svg__path {
+  stroke: black;
+}
+
 #canvas {
   position: absolute;
-  display: block;
+  display: none;
   margin: 0 auto;
   width: 1170px;
   height: 400px;
