@@ -3,7 +3,7 @@
 	&__wrap{
 		position: relative;
 		width: 1170px;
-		height: 400px;
+		height: 500px;
 
 
 	}
@@ -24,14 +24,14 @@
 		}
 		&--2{
 			bottom: 0;
-			left: 0;
+			left: 15%;
 		}
 		&--3{
 			top: 0;
 			left: 50%;
 		}
 		&--4{
-			bottom: 0;
+			bottom: 25%;
 			right: 0;
 		}
 	}

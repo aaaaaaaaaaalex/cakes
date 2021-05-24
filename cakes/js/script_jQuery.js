@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	// console.log(str);
 	
 
-	path.setAttribute("d", "M 0 0C 50 0 50 100 100 100C 150 100 150 0 200 0C 250 0 250 100 300 100" );
+	path.setAttribute("d", "M 70 70C 125 0 125 430 250 430C 380 430 400 100 650 70C 880 50 880 500 1100 350" );
 
 
 
