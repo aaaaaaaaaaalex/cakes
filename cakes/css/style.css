@@ -177,6 +177,11 @@ body.no-scroll {
           flex-direction: column;
 }
 
+.job__item:hover ~ .svg > .svg__path {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
 .job__item--1 {
   top: 0;
   left: 0;
@@ -291,6 +296,32 @@ body.no-scroll {
           order: 2;
 }
 
+.order__inner {
+  padding: 150px 100px;
+  border: 3px solid rgba(253, 119, 43, 0.7);
+  -webkit-box-shadow: 0px 0px 100px 15px rgba(253, 119, 43, 0.1);
+          box-shadow: 0px 0px 100px 15px rgba(253, 119, 43, 0.1);
+  border-radius: 40px;
+}
+
+.order__header {
+  text-align: center;
+}
+
+.order__title {
+  margin-bottom: 10px;
+  font-size: 34px;
+  font-weight: 600;
+  color: #000;
+}
+
+.order__subtitle {
+  margin-bottom: 80px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
 .footer {
   background-color: #5A5A5A;
 }
@@ -384,6 +415,35 @@ body.no-scroll {
 .btn-buy:hover {
   -webkit-box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
           box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
+}
+
+.btn-order {
+  padding: 1.07em 3.5em;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #FD772B;
+  border-radius: .5em;
+  -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-box-shadow .2s ease-out;
+  transition: -webkit-box-shadow .2s ease-out;
+  -o-transition: box-shadow .2s ease-out;
+  transition: box-shadow .2s ease-out;
+  transition: box-shadow .2s ease-out, -webkit-box-shadow .2s ease-out;
+}
+
+.btn-order.hover-on:hover {
+  background-color: #FF8946;
+  -webkit-box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
+          box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
+}
+
+.btn-order:disabled {
+  background: -webkit-gradient(linear, right top, left top, from(#F1B898), to(#7B7B7B));
+  background: -o-linear-gradient(right, #F1B898, #7B7B7B);
+  background: linear-gradient(to left, #F1B898, #7B7B7B);
+  cursor: not-allowed;
 }
 
 .eight-block {
@@ -527,7 +587,6 @@ body.no-scroll {
 .svg {
   width: 1170px;
   height: 500px;
-  background-color: #FFDECC;
 }
 
 .svg__path {
@@ -535,6 +594,28 @@ body.no-scroll {
   fill: none;
   stroke-width: 2px;
   stroke-dasharray: 15 33;
+  -webkit-animation: svg-dasharray 3s linear 0s infinite normal none;
+          animation: svg-dasharray 3s linear 0s infinite normal none;
+}
+
+@-webkit-keyframes svg-dasharray {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -96;
+  }
+}
+
+@keyframes svg-dasharray {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -96;
+  }
 }
 
 #canvas {
@@ -545,6 +626,86 @@ body.no-scroll {
   height: 400px;
   border: 5px solid #000;
   background-color: rgba(255, 222, 204, 0.5);
+}
+
+.order-form__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.order-form__left {
+  width: 38%;
+  padding-right: 33px;
+}
+
+.order-form__right {
+  width: 62%;
+  padding-left: 33px;
+}
+
+.order-form__title {
+  margin-bottom: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.order-form__input {
+  display: block;
+  margin-bottom: 25px;
+  width: 100%;
+  padding: 13px 22px;
+  font-size: 16px;
+  color: #000;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background-color: #F8F8F8;
+  -webkit-transition: border-color .2s ease-out;
+  -o-transition: border-color .2s ease-out;
+  transition: border-color .2s ease-out;
+}
+
+.order-form__input:focus {
+  outline: 0;
+  border-color: #FD772B;
+}
+
+.order-form__input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.order-form__input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.order-form__input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.order-form__input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.order-form__input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.order-form__input.valid {
+  border-color: #289B00;
+  color: #289B00;
+}
+
+.order-form__input.invalid {
+  border-color: #DB0000;
+  color: #DB0000;
+}
+
+.order-form__textarea {
+  height: 120px;
+  resize: none;
 }
 
 .tac {

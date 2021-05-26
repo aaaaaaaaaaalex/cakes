@@ -1,0 +1,36 @@
+<section class="order section" id="order">
+	<div class="container">
+		<div class="order__inner">
+
+			<div class="order__header">
+				<h2 class="order__title">Сделать индивидуальный заказ</h2>
+				<h3 class="order__subtitle">Заполните форму и мы с вами свяжемся</h3>
+			</div>
+
+			<form class="order-form" data-form action="/" method="post" target="_blank">
+				<div class="order-form__wrap">
+
+					<div class="order-form__left">
+						<h4 class="order-form__title">Контактные данные</h4>
+						<input class="order-form__input" data-input data-input-name data-re=".*[а-яА-ЯёЁ]{2,}.*" data-flag="false" data-required="true" type="text" name="name" maxlength="100" placeholder="Имя" required>
+						<input class="order-form__input" data-input data-input-tel data-re="\+7\s\(\d{3}\)\s\d{3}\s\-\s\d{2}\s\-\s\d{2}" data-flag="false" data-required="true" type="tel" name="tel" maxlength="11" placeholder="Телефон" required>
+						<input class="order-form__input" data-input data-input-email data-re="^(?!.*@.*@.*$)(?!.*@.*\-\-.*\..*$)(?!.*@.*\-\..*$)(?!.*@.*\-$)(.*@.+(\..{1,11})?)$" data-flag="false" data-required="false" type="email" name="email" maxlength="100" placeholder="Почта">
+					</div><!-- /.order-form__left -->
+
+					<div class="order-form__right">
+						<h4 class="order-form__title">О заказе</h4>
+						<textarea class="order-form__input order-form__textarea" type="text" name="comment" maxlength="300" placeholder="Комментарий к заказу"></textarea>
+						<button class="btn btn-order" data-btn type="submit" title="Нажмите, чтобы оформить заказ" disabled>Оформить заказ</button>
+					</div><!-- /.order-form__right -->
+
+				</div><!-- /.order-form__wrap -->
+
+
+			</form>
+		
+		
+
+
+		</div><!-- /.order__inner -->
+	</div><!-- /.container -->
+</section><!-- /.order -->

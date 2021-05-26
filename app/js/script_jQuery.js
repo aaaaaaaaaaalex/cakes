@@ -1,8 +1,10 @@
 @@include('check_webp_css.js')
 
 document.addEventListener("DOMContentLoaded", function(){
+
+@@include('jquery.maskedinput.min.js')
 	
-	// Scale Intro
+	// SCALE INTRO
 	function addClass() {
 		let blockBg = document.querySelector(".intro__wrap--1");
 		blockBg.classList.add("scale-intro");
@@ -10,53 +12,103 @@ document.addEventListener("DOMContentLoaded", function(){
 	setTimeout(addClass, 50);
 
 
-	// Svg
+
+
+	// SVG
 	let path = document.querySelector(".svg__path");
-	// let numPoints = 4;
-	// let points = [10, 40, 100, 50];
-	// let str = "";
-	// str += `M 0 0 V ${points[0]}`;
-	// str += `M 0 ${points[0]}`;
-
-
-	// for (let i=0; i < numPoints-1; i++) {
-	// 	let p = i+1/(numPoints-1)*1000;
-	// 	let cp = p - (1/(numPoints-1)*1000)/2;
-	// 	str += `C ${cp} ${points[i]} ${cp} ${points[i+1]} ${p} ${points[i+1]}`;
-	// };
-	// str += "V 0 H 0"
-
-	// console.log(str);
 	
-
 	path.setAttribute("d", "M 70 70C 125 0 125 430 250 430C 380 430 400 100 650 70C 880 50 880 500 1100 350" );
 
 
 
 
 
+	// MASK
+	// MASK TEL
+	jQuery("[data-input-tel]").mask("+7 (999) 999 - 99 - 99", {autoclear: false});
+	// MASK NAME
+	jQuery("[data-input-name]").on('input', function() {
+		jQuery(this).val(jQuery(this).val().replace(/[^а-яА-ЯёЁ\s]/g, ''));
+	});
+	// MASK EMAIL
+	jQuery("[data-input-email]").on('input', function() {
+		jQuery(this).val(jQuery(this).val().replace(/[а-яА-ЯёЁ]/g, ''));
+	});
 
 
+	// VALIDATOR
+	let inputs = jQuery("[data-input]");
 
-	// Canvas
-	// let canvas = document.getElementById("canvas");
-	// let ctx = canvas.getContext("2d");
+	for (i=0; i<inputs.length; i++) {
+		let input = inputs[i];
+		jQuery(input).on("input change keydown blur keypress keyup", onValidatorInput);
+	};
 
-	// canvas.setAttribute("width", "1170px");
-	// canvas.setAttribute("height", "400px");
-	
-	// ctx.strokeStyle = '#f00';
-	// ctx.beginPath();
-	// ctx.moveTo(10, 15);
-	// ctx.bezierCurveTo(75, 55, 175, 20, 250, 15);
-	// ctx.moveTo(10, 15);
-	// ctx.quadraticCurveTo(100, 100, 250, 15);
-	// ctx.stroke();
+	function onValidatorInput(event) {
+		// VALIDATOR INPUT
+		let input = event.target;
+		let inputValue = input.value;
+		let inputDataRe = jQuery(input).data("re");
+		let inputDataRequired = jQuery(input).data("required");
+		let inputСreateRe = new RegExp(inputDataRe, "g");
+		let resultRe = inputValue.match(inputСreateRe);
 
-	// canvas.height = 
-	// ctx.setLineDash([5, 15]);/*dashes are 5px and spaces are 15px*/
-	// ctx.beginPath();
-	// ctx.moveTo(0,100);
-	// ctx.lineTo(400, 100);
-	// ctx.stroke();
+
+		// ЕСЛИ ПОЛЕ ОБЯЗАТЕЛЬНО ДЛЯ ЗАПОЛНЕНИЯ
+		if(inputDataRequired == true){
+
+			if(inputValue == ""){
+				jQuery(input).removeClass("valid").addClass("invalid").attr("data-flag","false");
+			}else{
+				if(inputValue != resultRe){
+					jQuery(input).removeClass("valid").addClass("invalid").attr("data-flag","false");
+				}else{
+					jQuery(input).removeClass("invalid").addClass("valid").attr("data-flag","true");
+				}
+			}
+
+		// ЕСЛИ ПОЛЕ НЕ ОБЯЗАТЕЛЬНО ДЛЯ ЗАПОЛНЕНИЯ
+		}else{
+
+			if(inputValue == ""){
+				jQuery(input).removeClass("valid").removeClass("invalid").attr("data-flag","true");
+			}else{
+				if(inputValue != resultRe){
+					jQuery(input).removeClass("valid").addClass("invalid").attr("data-flag","false");
+				}else{
+					jQuery(input).removeClass("invalid").addClass("valid").attr("data-flag","true");
+				}
+			}
+
+		}
+		// CALL onCheck
+		onCheck(input);
+	};
+
+	function onCheck(){
+		let inputOn = event.target;
+		let inputsFlag = jQuery(inputOn).parents("[data-form]").find("[data-input]");
+		let btnRelated = jQuery(inputOn).parents("[data-form]").find("[data-btn]");
+
+		let flagValue = jQuery(inputsFlag).map(function() {
+			return this.dataset.flag;
+		}).get();
+
+		let getFlagValue = flagValue.every(validFlag);
+
+		function validFlag(n){
+			return n == "true";
+		};
+
+		switchBtn(getFlagValue, btnRelated);
+	};
+
+	// SWITCH BUTTON
+	function switchBtn(getFlagValue, btnRelated){
+		if(getFlagValue == true ) {
+			btnRelated.prop("disabled", false).addClass("hover-on");
+		}else{
+			btnRelated.prop("disabled", true).removeClass("hover-on");
+		}
+	};
 });

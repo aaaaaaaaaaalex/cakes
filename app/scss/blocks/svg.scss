@@ -1,12 +1,24 @@
 .svg{
 	width: 1170px;
 	height: 500px;
-	background-color: $beige-light;
 
 	&__path{
 		stroke: $orange;
 		fill: none;
 		stroke-width: 2px;
 		stroke-dasharray: 15 33;
+
+		animation: svg-dasharray 3s linear 0s infinite normal none;
+
+		
+	}
+}
+
+@keyframes svg-dasharray {
+	0%{
+		stroke-dashoffset: 0;
+	}
+	100%{
+		stroke-dashoffset: -96;
 	}
 }
