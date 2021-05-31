@@ -1,8 +1,21 @@
 .footer{
-	background-color: #5A5A5A;
+	background-color: #000;
 
 	&__inner{
+		padding: 40px 0;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
+	}
+	&__schedule{
+		display: flex;
+		align-items: center;
+	}
+	&__img{
+		margin-right: 24px;
+	}
+	&__time{
+		font-size: 20px;
+		font-weight: 500;
+		color: #fff;
 	}
 }

@@ -1,0 +1,41 @@
+.cart{
+	display: none;
+	position: fixed;
+	top: 50%;
+	right: 50px;
+
+	justify-content: center;
+	align-items: center;
+
+	&.show{
+		display: block;
+	}
+	&__btn{
+		display: inline-block;
+		vertical-align: top;
+		padding: 0;
+
+		border: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 80px;
+		height: 80px;
+
+		border-radius: 50%;
+		background-color: #FD772B;
+
+
+		transition: background-color .2s ease-out, box-shadow .2s ease-out;
+
+		&:hover{
+			box-shadow: 0px 4px 30px rgba(253, 119, 43, 0.3);
+		}
+		&:active{
+			background-color: #E85400;
+		}
+	}
+
+}

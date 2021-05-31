@@ -100,7 +100,7 @@
 		&:hover:before{
 			opacity: 1;
 		}
-		&:hover::after{
+		&:hover:after{
 			width: 66px;
 			height: 66px;
 		}

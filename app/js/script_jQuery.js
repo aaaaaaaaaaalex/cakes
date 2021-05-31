@@ -4,12 +4,60 @@ document.addEventListener("DOMContentLoaded", function(){
 
 @@include('jquery.maskedinput.min.js')
 	
+	// SMOOTH SCROLL
+	let elementsSmoothScroll = document.querySelectorAll("[data-scroll]");
+
+	let onClick = function(event) {
+		event.preventDefault();
+
+		let element = event.target;
+		let sectionId = element.dataset.scroll;
+		let sectionOffset = jQuery(sectionId).offset().top;
+
+		jQuery("html, body").animate( {
+			scrollTop: sectionOffset
+		}, 800);
+	};
+
+	for (i=0; i<elementsSmoothScroll.length; i++) {
+		let element = elementsSmoothScroll[i];
+		element.addEventListener("click", onClick);
+	};
+
+
+
+
+
+
+
 	// SCALE INTRO
 	function addClass() {
 		let blockBg = document.querySelector(".intro__wrap--1");
 		blockBg.classList.add("scale-intro");
 	};
 	setTimeout(addClass, 50);
+
+
+
+
+	// CART SHOW
+	let btnsBuy = document.querySelectorAll("[data-cart]");
+
+	let onClickBtn = function(event) {
+		event.preventDefault();
+
+		let cart = document.querySelector("#cart");
+		cart.classList.add("show")
+		
+	};
+
+	for (i=0; i<btnsBuy.length; i++) {
+		let btn = btnsBuy[i];
+		btn.addEventListener("click", onClickBtn);
+	};
+
+
+
 
 
 

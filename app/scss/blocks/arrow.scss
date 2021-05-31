@@ -1,6 +1,6 @@
 .arrow{
 	position: relative;
-	margin: 0 auto;
+	margin: 0 80px;
 	width: 150px;
 	height: 150px;
 	display: flex;
@@ -19,9 +19,9 @@
 
 		border-radius: 50%;
 
-		background: rgba(241, 184, 152, 0.8);
+		background-color: rgba(241, 184, 152, 0.8);
 
-		transition: background .2s ease-out;
+		transition: background-color .35s ease-out;
 
 		&:after{
 			content: "";
@@ -33,10 +33,11 @@
 			z-index: -1;
 	
 			border-radius: 50%;
-			background: rgba(241, 184, 152, 0.4);
+			background-color: rgba(241, 184, 152, 0.4);
 	
 			transform: translate(-50%, -50%);
 	
+			transition: width .35s ease-out, height .35s ease-out;
 		}
 		&:before{
 			content: "";
@@ -48,14 +49,24 @@
 			z-index: -2;
 	
 			border-radius: 50%;
-			background: rgba(241, 184, 152, 0.2);
+			background-color: rgba(241, 184, 152, 0.2);
 	
 			transform: translate(-50%, -50%);
 	
+			transition: width .35s ease-out, height .35s ease-out;
 		}
 		&:hover{
-			background: rgba(255, 172, 124, 0.8);
+			background-color: rgba(255, 172, 124, 0.8);
 		}
+		&:hover:after{
+			width: 120px;
+			height: 120px;
+		}
+		&:hover:before{
+			width: 155px;
+			height: 155px;
+		}
+		
 	}
 	&__body{
 		display: block;

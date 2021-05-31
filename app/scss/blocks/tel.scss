@@ -1,0 +1,19 @@
+.tel{
+	margin-left: 54px;
+
+	display: flex;
+	align-items: center;
+
+	&__img{
+		margin-right: 24px;
+	}
+	&__link{
+		font-size: 20px;
+		font-weight: 500;
+		color: #fff;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
