@@ -1,0 +1,24 @@
+.social{
+	display: flex;
+
+	&__item{
+		margin-right: 30px;
+
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	&__body{
+		display: block;
+		width: 37px;
+		height: 37px;
+
+		fill: #F1B898;
+
+		transition: fill .2s ease-out;
+		
+		&:hover{
+			fill: #FFD2B8;
+		}
+	}
+}
