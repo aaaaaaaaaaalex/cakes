@@ -1,10 +1,10 @@
 @mixin font($font_name, $file_name, $weight, $style) {
-    @font-face { 
-        font-family: $font_name; 
-        font-display: swap; 
-        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2"); 
-        font-weight: #{$weight}; 
-        font-style: #{$style}; 
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
     }
 }
 
@@ -37,12 +37,14 @@
 @import "blocks/btn";
 @import "blocks/eight-block";
 @import "blocks/six-block";
+@import "blocks/img-in-circle";
 @import "blocks/svg";
 @import "blocks/canvas";
 @import "blocks/order-form";
 @import "blocks/social";
 @import "blocks/tel";
 @import "blocks/arrow";
+@import "blocks/modals";
 
 
 

@@ -1,0 +1,44 @@
+<!-- МОДАЛЬНОЕ ОКНО "Корзина" -->
+<div class="modal" id="modal" style="display: flex;">
+	<div class="modal__dialog">
+
+		<button class="btn modal__close" type="button" data-close>
+			X
+		</button>
+
+		<div class="modal__content">
+
+			<div class="modal__left">
+				<div class="modal__item">
+
+					<div class="img-in-circle">
+						<img class="img-in-circle__img" src="img/goodies/1.png" alt="торт">
+					</div>
+
+					<div class="modal__info">
+						<div class="modal__name">Медовик</div>
+						<div class="modal__massa">
+							Вес: <span class="modal__kg">0,4 кг</span>
+						</div>
+					</div>
+
+
+					<div class="counter">
+						<button class="counter__btn" data-direction="minus">-</button>
+						<input class="counter__input" type="number" name="count" value="0" min="0" step="1">
+						<button class="counter__btn" data-direction="plus">+</button>
+					</div>
+					<div class="modal__price"></div>
+				</div><!-- /.modal__item -->
+
+			</div><!-- /.modal__left -->
+
+
+
+
+			<div class="modal__right"></div>
+
+		</div><!-- /.modal__content -->
+
+	</div><!-- /.modal__dialog -->
+</div><!-- /.modal -->

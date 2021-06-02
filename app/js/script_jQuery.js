@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 @@include('jquery.maskedinput.min.js')
-	
+
 	// SMOOTH SCROLL
 	let elementsSmoothScroll = document.querySelectorAll("[data-scroll]");
 
@@ -31,11 +31,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 	// SCALE INTRO
-	function addClass() {
+	let addClass = function() {
 		let blockBg = document.querySelector(".intro__wrap--1");
 		blockBg.classList.add("scale-intro");
 	};
-	setTimeout(addClass, 50);
+	setTimeout(addClass, 700);
+
+
+
 
 
 
@@ -48,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		let cart = document.querySelector("#cart");
 		cart.classList.add("show")
-		
 	};
 
 	for (i=0; i<btnsBuy.length; i++) {
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// SVG
 	let path = document.querySelector(".svg__path");
-	
+
 	path.setAttribute("d", "M 70 70C 125 0 125 430 250 430C 380 430 400 100 650 70C 880 50 880 500 1100 350" );
 
 
@@ -158,5 +160,65 @@ document.addEventListener("DOMContentLoaded", function(){
 		}else{
 			btnRelated.prop("disabled", true).removeClass("hover-on");
 		}
+	};
+
+
+
+
+
+
+
+	// Modal
+	// Modal Open
+	jQuery("[data-modal]").on("click", function(event) {
+		event.preventDefault();
+		let modalId = jQuery(this).data("modal");
+		jQuery(modalId).addClass("show");
+		jQuery("body").addClass("no-scroll");
+	});
+	// Modal Close
+	jQuery("[data-close]").on("click", function(event) {
+		event.preventDefault();
+		let modalParent = jQuery(this).parents(".modal");
+		jQuery(modalParent).removeClass("show");
+		jQuery("body").removeClass("no-scroll");
+	});
+	jQuery(".modal").on("click", function() {
+		jQuery(this).removeClass("show");
+		jQuery("body").removeClass("no-scroll");
+	});
+	jQuery(".modal__dialog").on("click", function(event) {
+		event.stopPropagation();
+	});
+
+
+
+
+	// COUNTER
+	let btnsCount = document.querySelectorAll(".counter__btn");
+
+	let onCount = function() {
+
+		let direction = this.dataset.direction;
+		let input = this.parentElement.querySelector(".counter__input");
+		let currentValueInput = +input.value;
+		let newValue;
+
+		if (direction === "plus") {
+			newValue = currentValueInput + 1;
+		} else {
+			if ((newValue = currentValueInput -1) > 0) {
+				newValue = currentValueInput -1;
+			} else {
+				newValue = 0;
+			}
+		}
+
+		input.value = newValue;
+	};
+
+	for (i=0; i<btnsCount.length; i++) {
+		let btnCount = btnsCount[i];
+		btnCount.addEventListener("click", onCount);
 	};
 });
