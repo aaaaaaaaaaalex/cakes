@@ -1,0 +1,51 @@
+.counter{
+	display: flex;
+	align-items: center;
+
+
+	// Общий сброс стилей input
+	&__input{
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		border: none;
+
+		appearance: none;
+	}
+	// Сброс стилей для webkit input
+	&__input::-webkit-outer-spin-button,
+	&__input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+	// Сброс стилей для FF input
+	&__input{
+		-moz-appearance: textfield;
+	}
+	&__input:hover,
+	&__input:focus{
+		-moz-appearance: number-input;
+	}
+
+	// Кастомизация
+	// Кастомизируем input
+	&__input{
+		font-size: 18px;
+		width: 47px;
+
+		text-align: center;
+	}
+	// Кастомизируем btn
+	&__btn{
+		width: 22px;
+		height: 22px;
+
+		&--minus{
+			background: url("../img/cart/minus.svg") center center;
+		}
+		&--plus{
+			background: url("../img/cart/plus.svg") center center;
+		}
+	}
+
+
+}

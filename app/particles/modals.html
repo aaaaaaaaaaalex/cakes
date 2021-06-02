@@ -1,5 +1,5 @@
 <!-- МОДАЛЬНОЕ ОКНО "Корзина" -->
-<div class="modal" id="modal" style="display: flex;">
+<div class="modal" id="modal">
 	<div class="modal__dialog">
 
 		<button class="btn modal__close" type="button" data-close>
@@ -11,8 +11,10 @@
 			<div class="modal__left">
 				<div class="modal__item">
 
-					<div class="img-in-circle">
-						<img class="img-in-circle__img" src="img/goodies/1.png" alt="торт">
+					<div>
+						<div class="img-in-circle">
+							<img class="img-in-circle__img" src="img/goodies/1.png" alt="торт">
+						</div>
 					</div>
 
 					<div class="modal__info">
@@ -24,10 +26,12 @@
 
 
 					<div class="counter">
-						<button class="btn counter__btn" data-direction="minus">-</button>
+						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
 						<input class="counter__input" type="number" name="count" value="0" min="0" step="1">
-						<button class="btn counter__btn" data-direction="plus">+</button>
+						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
 					</div>
+
+
 					<div class="modal__price"></div>
 				</div><!-- /.modal__item -->
 

@@ -944,7 +944,9 @@ body.no-scroll {
 }
 
 .modal {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 100%;
   padding: 5px;
@@ -984,9 +986,83 @@ body.no-scroll {
   overflow: auto;
 }
 
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: 0;
+  border: 0;
+}
+
+.modal__close:hover {
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-transition: -webkit-transform .2s linear;
+  transition: -webkit-transform .2s linear;
+  -o-transition: transform .2s linear;
+  transition: transform .2s linear;
+  transition: transform .2s linear, -webkit-transform .2s linear;
+}
+
 .modal__content {
   width: 100%;
   max-height: 100%;
+}
+
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.counter__input {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.counter__input::-webkit-outer-spin-button,
+.counter__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.counter__input {
+  -moz-appearance: textfield;
+}
+
+.counter__input:hover,
+.counter__input:focus {
+  -moz-appearance: number-input;
+}
+
+.counter__input {
+  font-size: 18px;
+  width: 47px;
+  text-align: center;
+}
+
+.counter__btn {
+  width: 22px;
+  height: 22px;
+}
+
+.counter__btn--minus {
+  background: url("../img/cart/minus.svg") center center;
+}
+
+.counter__btn--plus {
+  background: url("../img/cart/plus.svg") center center;
 }
 
 .tac {
