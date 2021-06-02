@@ -10,16 +10,3 @@ button{cursor: pointer;}
 ul li{list-style: none;}
 
 input, textarea, select{font: inherit}
-
-
-input {
-	padding: 0;
-	margin: 0;
-	border: 0;
-
-	display: block;
-
-	&:focus{
-		outline: none;
-	}
-}
