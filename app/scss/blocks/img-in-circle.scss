@@ -1,5 +1,6 @@
 .img-in-circle{
 	position: relative;
+	z-index: 1;
 
 	transition: transform .2s ease-out;
 
@@ -17,7 +18,7 @@
 		height: 220px;
 
 		background-color: $white;
-		border: 1px solid rgba($white, .05);
+		border: 1px solid rgba(0, 0, 0, 0.05);
 		border-radius: 50%;
 		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
 
@@ -35,12 +36,19 @@
 		height: 270px;
 
 		background-color: $white;
-		border: 1px solid rgba($white, .05);
 		border-radius: 50%;
 		box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.05);
 
 
 		transform: translate(-50%, -50%);
+	}
+	&--sm:after{
+		width: 98px;
+		height: 98px;
+	}
+	&--sm:before{
+		width: 120px;
+		height: 120px;
 	}
 	&__img{
 		display: block;
@@ -57,6 +65,11 @@
 		&--sm{
 			width: 190px;
 			height: 190px;
+		}
+		&--modal{
+			margin: 0;
+			width: 85px;
+			height: 85px;
 		}
 
 	}

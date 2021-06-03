@@ -197,11 +197,20 @@ document.addEventListener("DOMContentLoaded", function(){
 	// COUNTER
 	let btnsCount = document.querySelectorAll(".counter__btn");
 
+	let countPriceTotal = function(input) {
+		let currentValueInput = input.value;
+		let сost = Number(input.dataset.price);
+		let spanPriceTotal = input.closest(".modal__item").querySelector(".modal__price-total");
+
+		let totalPrice = currentValueInput * сost;
+		spanPriceTotal.textContent = totalPrice;
+	};
+
 	let onCount = function() {
 
 		let direction = this.dataset.direction;
 		let input = this.parentElement.querySelector(".counter__input");
-		let currentValueInput = +input.value;
+		let currentValueInput = Number(input.value);
 		let newValue;
 
 		if (direction === "plus") {
@@ -215,6 +224,8 @@ document.addEventListener("DOMContentLoaded", function(){
 		}
 
 		input.value = newValue;
+
+		countPriceTotal(input);
 	};
 
 	for (i=0; i<btnsCount.length; i++) {
