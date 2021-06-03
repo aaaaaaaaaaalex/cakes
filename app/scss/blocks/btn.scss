@@ -16,6 +16,7 @@
 		background-color: $white;
 		border-radius: .5em;
 		transition: box-shadow .2s ease-out, color .2s ease-out;
+
 		&:hover{
 			color: #D24C00;
 			box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.35);
@@ -31,6 +32,7 @@
 		border-radius: .7em;
 
 		transition: box-shadow .2s ease-out;
+
 		&:hover{
 			box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
 		}
@@ -46,7 +48,7 @@
 
 		box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 
-		transition: box-shadow .2s ease-out;
+		transition: box-shadow .2s ease-out, background-color .2s ease-out;
 
 		&.hover-on {
 			&:hover{
@@ -56,11 +58,100 @@
 
 		}
 		&:disabled{
-			background: linear-gradient(to left,#F1B898,#7B7B7B);
+			background: linear-gradient(to left,#FD772B,#7B7B7B);
 			cursor: not-allowed;
 		}
 	}
-	.btn-address {
+	&-address {
+		padding: 1.07em 0;
+		width: 100%;
 
+		font-size: 14px;
+		font-weight: 600;
+		color: $white;
+		background-color: $orange;
+		border-radius: .36em;
+
+		transition: box-shadow .2s ease-out, background-color .2s ease-out;
+
+		&.hover-on {
+			&:hover{
+				background-color: #FF8946;
+				box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
+			}
+
+		}
+		&:disabled{
+			background: linear-gradient(to left,#FD772B,#7B7B7B);
+			cursor: not-allowed;
+		}
+	}
+	&-card-choice{
+		padding: 1.29em 1.93em;
+
+		font-size: 14px;
+		font-weight: 600;
+		color: #000;
+		background-color: #fff;
+		border: 1px solid #E7E7E7;
+		border-radius: .71em;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		transition: border-color .2s ease-out;
+
+		&:hover{
+			border-color: #000;
+		}
+	}
+	&-card-add {
+		padding: .75em 0;
+		width: 100%;
+
+		font-size: 12px;
+		font-weight: 600;
+		color: $white;
+		background-color: $orange;
+		border-radius: .42em;
+
+		transition: box-shadow .2s ease-out, background-color .2s ease-out;
+
+		&.hover-on {
+			&:hover{
+				background-color: #FF8946;
+				box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
+			}
+
+		}
+		&:disabled{
+			background: linear-gradient(to left,#FD772B,#7B7B7B);
+			cursor: not-allowed;
+		}
+	}
+	&-order {
+		padding: 1.06em 0;
+		width: 100%;
+
+		font-size: 16px;
+		font-weight: 600;
+		color: $white;
+		background-color: $orange;
+		border-radius: 0.625em;
+
+		transition: box-shadow .2s ease-out, background-color .2s ease-out;
+
+		&.hover-on {
+			&:hover{
+				background-color: #FF8946;
+				box-shadow: 0px 0px 10px rgba(253, 119, 43, 0.4);
+			}
+
+		}
+		&:disabled{
+			background: linear-gradient(to left,#FD772B,#7B7B7B);
+			cursor: not-allowed;
+		}
 	}
 }

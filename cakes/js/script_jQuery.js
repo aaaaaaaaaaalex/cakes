@@ -208,18 +208,54 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// COUNTER
 	let btnsCount = document.querySelectorAll(".counter__btn");
+	let spanTotalResult = document.getElementById("total-price");
+	let spanDostavkaValue = Number(document.getElementById("dostavka").textContent);
 
-	let countPriceTotal = function(input) {
+
+
+	// Считаем сумму по всем продуктам
+	let countPriceTotalAll = function() {
+		let spansPriceTotalAll = document.querySelectorAll(".modal__price-total");
+
+		priceTotalAll = 0;
+
+		for (i=0; i<spansPriceTotalAll.length; i++) {
+			let spanPriceValue = Number(spansPriceTotalAll[i].textContent);
+
+			if(spanPriceValue > 0) {
+				priceTotalAll = priceTotalAll + spanPriceValue;
+
+				priceTotalAll = priceTotalAll + spanDostavkaValue;
+				spanTotalResult.textContent = priceTotalAll;
+			} else {
+				spanTotalResult.textContent = 0;
+				console.log("установил в спан тотал 0");
+
+			}
+		};
+
+		// priceTotalAll = priceTotalAll + spanDostavkaValue;
+		// spanTotalResult.textContent = priceTotalAll;
+	};
+
+
+
+	// Считаем сумму по отдельному продукту
+	let countPriceTotalOne = function(input) {
 		let currentValueInput = input.value;
 		let сost = Number(input.dataset.price);
 		let spanPriceTotal = input.closest(".modal__item").querySelector(".modal__price-total");
 
 		let totalPrice = currentValueInput * сost;
 		spanPriceTotal.textContent = totalPrice;
+
+		countPriceTotalAll();
 	};
 
-	let onCount = function() {
 
+
+	// Тело счетчика
+	let onCount = function() {
 		let direction = this.dataset.direction;
 		let input = this.parentElement.querySelector(".counter__input");
 		let currentValueInput = Number(input.value);
@@ -236,12 +272,15 @@ document.addEventListener("DOMContentLoaded", function(){
 		}
 
 		input.value = newValue;
-
-		countPriceTotal(input);
+		countPriceTotalOne(input);
 	};
 
 	for (i=0; i<btnsCount.length; i++) {
 		let btnCount = btnsCount[i];
 		btnCount.addEventListener("click", onCount);
 	};
+
+
+
+
 });

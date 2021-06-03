@@ -26,7 +26,7 @@
 					</div>
 					<div class="counter">
 						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
-						<input class="counter__input" data-price="120" type="number" name="count" value="0" min="0" step="1">
+						<input class="counter__input" data-price="120" type="number" name="count" value="0" min="0" step="1" readonly>
 						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
@@ -48,7 +48,7 @@
 					</div>
 					<div class="counter">
 						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
-						<input class="counter__input" data-price="320" type="number" name="count" value="0" min="0" step="1">
+						<input class="counter__input" data-price="320" type="number" name="count" value="0" min="0" step="1" readonly>
 						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
@@ -69,7 +69,7 @@
 					</div>
 					<div class="counter">
 						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
-						<input class="counter__input" data-price="450" type="number" name="count" value="0" min="0" step="1">
+						<input class="counter__input" data-price="450" type="number" name="count" value="0" min="0" step="1" readonly>
 						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
@@ -90,7 +90,7 @@
 					</div>
 					<div class="counter">
 						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
-						<input class="counter__input" data-price="1200" type="number" name="count" value="0" min="0" step="1">
+						<input class="counter__input" data-price="1200" type="number" name="count" value="0" min="0" step="1" readonly>
 						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
@@ -111,7 +111,7 @@
 					</div>
 					<div class="counter">
 						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
-						<input class="counter__input" data-price="750" type="number" name="count" value="0" min="0" step="1">
+						<input class="counter__input" data-price="750" type="number" name="count" value="0" min="0" step="1" readonly>
 						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
@@ -132,7 +132,7 @@
 					</div>
 					<div class="counter">
 						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
-						<input class="counter__input" data-price="1670" type="number" name="count" value="0" min="0" step="1">
+						<input class="counter__input" data-price="1670" type="number" name="count" value="0" min="0" step="1" readonly>
 						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
@@ -146,20 +146,88 @@
 
 			<div class="modal__right">
 
-				<div class="address">
+				<form class="address" method="POST">
 					<h6 class="address__title">Адрес доставки</h6>
 
-					<input class="address__input" type="text" name="name" id="" placeholder="Ваше ФИО">
-					<input class="address__input" type="tel" name="tel" id="" placeholder="Номер телефона">
-					<input class="address__input" type="text" name="city" id="" placeholder="Город">
-					<input class="address__input" type="text" name="street" id="" placeholder="Улица">
-					<input class="address__input" type="text" name="frontdoor" id="" placeholder="Подъезд">
-					<input class="address__input" type="number" name="index" id="" placeholder="Индекс">
+					<div class="address__wrap-inputs">
+						<input class="address__input" type="text" name="name" placeholder="Ваше ФИО">
+						<input class="address__input" type="tel" name="tel" placeholder="Номер телефона">
+						<input class="address__input" type="text" name="city" placeholder="Город">
+						<input class="address__input" type="text" name="street" placeholder="Улица">
 
-					<button class="btn btn-address">Подтвердить адрес</button>
-				</div>
+						<div class="address__wrap">
+							<input class="address__input address__input--w50" type="text" name="frontdoor" placeholder="Подъезд">
+							<input class="address__input address__input--w50" type="number" name="index" placeholder="Индекс">
+						</div>
+					</div>
 
-			</div>
+					<button class="btn btn-address" type="submit" title="Нажмите, чтобы подтвердить адрес" disabled>Подтвердить адрес</button>
+				</form><!-- /.address -->
+
+				<form class="bank-card">
+					<h5 class="bank-card__title">Способ оплаты</h5>
+
+					<div class="bank-card__wrap">
+						<button class="btn btn-card-choice" type="button" title="Нажмите, чтобы выбрать способ оплаты">
+							<img src="img/cart/card.svg" alt="банковская карта">
+							<span class="bank-card__span">Добавить карту оплаты</span>
+						</button>
+
+						<button class="btn btn-card-choice" type="button" title="Нажмите, чтобы выбрать способ оплаты">
+							<img src="img/cart/apple.svg" alt="банковская карта">
+							<span class="bank-card__span">Оплата через Apple Pay</span>
+						</button>
+					</div>
+
+					<div class="bank-card__add-payment">
+						<h6 class="bank-card__subtitle">Добавить карту оплаты</h6>
+
+						<div class="bank-card__wrap-inputs">
+							<input class="bank-card__input" type="number" name="number-card" placeholder="Номер карты">
+							<input class="bank-card__input" type="text" name="address" placeholder="Адрес доставки">
+							<input class="bank-card__input" type="text" name="name-card" placeholder="Имя на карте">
+							<input class="bank-card__input" type="number" name="cvv" placeholder="CVV код">
+						</div>
+
+						<button class="btn btn-card-add" type="submit" title="Нажмите, чтобы добавить карту оплаты" disabled>Принять</button>
+					</div>
+
+				</form><!-- /.bank-card -->
+
+
+				<form class="total">
+
+					<div class="total__wrap">
+						<div class="total__line">
+							<div class="total__name">Итого:</div>
+							<div class="total__value">
+								<span class="total__span">0</span>
+								₽
+							</div>
+						</div>
+
+						<div class="total__line">
+							<div class="total__name">Доставка:</div>
+							<div class="total__value">
+								<span class="total__span" id="dostavka">300</span>
+								₽
+							</div>
+						</div>
+
+						<div class="total__line">
+							<div class="total__name">Всего к оплате:</div>
+							<div class="total__value total__value--result">
+								<span class="total__span" id="total-price">0</span>
+								₽
+							</div>
+						</div>
+					</div>
+
+					<button class="btn btn-order" type="submit" title="Нажмите, чтобы оформить заказ" disabled>Оформить заказ</button>
+				</form><!-- /.total -->
+
+
+			</div><!-- /.modal__right -->
 
 		</div><!-- /.modal__content -->
 

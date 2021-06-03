@@ -1,0 +1,46 @@
+.total {
+	width: 100%;
+	max-width: 430px;
+
+
+	&__wrap{
+		margin-bottom: 50px;
+
+		padding: 33px 40px 33px 30px;
+
+		border: 1px solid #E7E7E7;
+		border-radius: 10px;
+	}
+
+	&__line {
+		margin-bottom: 20px;
+
+		display: flex;
+		justify-content: space-between;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	&__name {
+		font-size: 14px;
+		font-weight: 400;
+		color: #000;
+		line-height: calc(17.07/14);
+	}
+
+	&__value {
+		font-size: 16px;
+		font-weight: 500;
+		color: #000;
+		line-height: calc(19.5/16);
+
+		&--result{
+			font-weight: 600;
+		}
+	}
+
+	&__span {
+	}
+}

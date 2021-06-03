@@ -1,10 +1,9 @@
-.address {
-	margin-bottom: 120px;
+.bank-card {
 
 	width: 100%;
 	max-width: 430px;
 
-	&__title{
+	&__title {
 		margin-bottom: 50px;
 
 		font-size: 16px;
@@ -13,6 +12,42 @@
 		line-height: calc(19.5/16);
 	}
 
+	&__wrap{
+		margin-bottom: 120px;
+
+		display: flex;
+		justify-content: space-between;
+	}
+	&__span{
+		max-width: 117px;
+	}
+	&__add-payment {
+		margin-bottom: 120px;
+		display: none;
+
+		padding: 33px 29px 34px;
+
+		border: 1px solid #E7E7E7;
+		border-radius: 10px;
+
+		&.show{
+			display: block;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 45px;
+
+		font-size: 16px;
+		font-weight: 600;
+		color: #000;
+		line-height: calc(19.5/16);
+	}
+
+	&__wrap-inputs{
+		margin-bottom: 30px;
+
+	}
 
 	// Общий сброс стилей input
 	&__input{
@@ -43,7 +78,7 @@
 		display: block;
 		width: 100%;
 
-		margin-bottom: 22px;
+		margin-bottom: 12px;
 		padding: 8px 0;
 
 		font-size: 14px;
@@ -64,20 +99,5 @@
 			outline: none;
 			border-color: #000;
 		}
-		&:last-child{
-			margin-left: 30px;
-		}
-		&--w50{
-			width: 50%;
-			margin-bottom: 0;
-		}
-	}
-	&__wrap-inputs{
-		margin-bottom: 50px;
-	}
-	&__wrap{
-		display: flex;
 	}
 }
-
-
