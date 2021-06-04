@@ -13,7 +13,7 @@
 	}
 	&__title{
 		margin-bottom: 50px;
-		
+
 		font-size: 16px;
 		font-weight: 600;
 		color: #000;
@@ -35,8 +35,8 @@
 
 		&:focus{
 			outline: 0;
-	
-			border-color: $orange;
+
+			border-color: rgba($orange, .3);
 		}
 		&::placeholder{
 			color: rgba(0, 0, 0, 0.5);

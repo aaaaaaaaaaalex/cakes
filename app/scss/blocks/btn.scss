@@ -106,6 +106,30 @@
 			border-color: #000;
 		}
 	}
+	&-bank-card-subtitle{
+		margin-bottom: 30px;
+
+		padding: .75em .6em;
+		width: 100%;
+
+
+		font-size: 16px;
+		font-weight: 600;
+		color: #000;
+		line-height: calc(19.5/16);
+		background-color: transparent;
+
+		text-align: left;
+
+		border: 1px solid transparent;
+		border-radius: .71em;
+
+		transition: border-color .2s ease-out;
+
+		&:hover{
+			border-color: #E7E7E7;
+		}
+	}
 	&-card-add {
 		padding: .75em 0;
 		width: 100%;
@@ -130,7 +154,7 @@
 			cursor: not-allowed;
 		}
 	}
-	&-order {
+	&-order-total{
 		padding: 1.06em 0;
 		width: 100%;
 
@@ -155,3 +179,4 @@
 		}
 	}
 }
+

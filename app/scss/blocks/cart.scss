@@ -4,6 +4,8 @@
 	top: 50%;
 	right: 50px;
 
+	z-index: 10;
+
 	justify-content: center;
 	align-items: center;
 
@@ -11,6 +13,8 @@
 		display: block;
 	}
 	&__btn{
+		position: relative;
+
 		display: inline-block;
 		vertical-align: top;
 		padding: 0;
@@ -36,6 +40,28 @@
 		&:active{
 			background-color: #E85400;
 		}
+
+	}
+	&__count{
+		position: absolute;
+		top: -3px;
+		right: 4px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 22px;
+		height: 22px;
+
+		border-radius: 50%;
+		background-color: #000;
+
+		font-family: "Roboto", sans-serif;
+		font-size: 12px;
+		font-weight: 700;
+		color: #fff;
+		line-height: calc(14.06/12);
 	}
 
 }

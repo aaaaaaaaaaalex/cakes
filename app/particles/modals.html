@@ -25,9 +25,9 @@
 						</div>
 					</div>
 					<div class="counter">
-						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
+						<button class="btn counter__btn counter__btn--minus" data-btn-change-quantity data-direction="minus"></button>
 						<input class="counter__input" data-price="120" type="number" name="count" value="0" min="0" step="1" readonly>
-						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
+						<button class="btn counter__btn counter__btn--plus" data-btn-change-quantity data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
 				</div><!-- /.modal__item -->
@@ -47,9 +47,9 @@
 						</div>
 					</div>
 					<div class="counter">
-						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
+						<button class="btn counter__btn counter__btn--minus" data-btn-change-quantity data-direction="minus"></button>
 						<input class="counter__input" data-price="320" type="number" name="count" value="0" min="0" step="1" readonly>
-						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
+						<button class="btn counter__btn counter__btn--plus" data-btn-change-quantity data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
 				</div><!-- /.modal__item -->
@@ -68,9 +68,9 @@
 						</div>
 					</div>
 					<div class="counter">
-						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
+						<button class="btn counter__btn counter__btn--minus" data-btn-change-quantity data-direction="minus"></button>
 						<input class="counter__input" data-price="450" type="number" name="count" value="0" min="0" step="1" readonly>
-						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
+						<button class="btn counter__btn counter__btn--plus" data-btn-change-quantity data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
 				</div><!-- /.modal__item -->
@@ -89,9 +89,9 @@
 						</div>
 					</div>
 					<div class="counter">
-						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
+						<button class="btn counter__btn counter__btn--minus" data-btn-change-quantity data-direction="minus"></button>
 						<input class="counter__input" data-price="1200" type="number" name="count" value="0" min="0" step="1" readonly>
-						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
+						<button class="btn counter__btn counter__btn--plus" data-btn-change-quantity data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
 				</div><!-- /.modal__item -->
@@ -110,9 +110,9 @@
 						</div>
 					</div>
 					<div class="counter">
-						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
+						<button class="btn counter__btn counter__btn--minus" data-btn-change-quantity data-direction="minus"></button>
 						<input class="counter__input" data-price="750" type="number" name="count" value="0" min="0" step="1" readonly>
-						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
+						<button class="btn counter__btn counter__btn--plus" data-btn-change-quantity data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
 				</div><!-- /.modal__item -->
@@ -131,9 +131,9 @@
 						</div>
 					</div>
 					<div class="counter">
-						<button class="btn counter__btn counter__btn--minus" data-direction="minus"></button>
+						<button class="btn counter__btn counter__btn--minus" data-btn-change-quantity data-direction="minus"></button>
 						<input class="counter__input" data-price="1670" type="number" name="count" value="0" min="0" step="1" readonly>
-						<button class="btn counter__btn counter__btn--plus" data-direction="plus"></button>
+						<button class="btn counter__btn counter__btn--plus" data-btn-change-quantity data-direction="plus"></button>
 					</div>
 					<div class="modal__price"><span class="modal__price-total">0</span>₽</div>
 				</div><!-- /.modal__item -->
@@ -146,25 +146,26 @@
 
 			<div class="modal__right">
 
-				<form class="address" method="POST">
+				<form class="address" data-form action="/" method="post" target="_blank">
+
 					<h6 class="address__title">Адрес доставки</h6>
 
 					<div class="address__wrap-inputs">
-						<input class="address__input" type="text" name="name" placeholder="Ваше ФИО">
-						<input class="address__input" type="tel" name="tel" placeholder="Номер телефона">
-						<input class="address__input" type="text" name="city" placeholder="Город">
-						<input class="address__input" type="text" name="street" placeholder="Улица">
+						<input class="address__input" data-input data-input-cyrillic data-re=".*[а-яА-ЯёЁ]{2,}.*" data-flag="false" data-required="true" name="name" maxlength="100" type="text" placeholder="Ваше ФИО" required>
+						<input class="address__input" data-input data-input-tel data-re="\+7\s\(\d{3}\)\s\d{3}\s\-\s\d{2}\s\-\s\d{2}" data-flag="false" data-required="true" name="tel" maxlength="11" type="tel" placeholder="Номер телефона" required>
+						<input class="address__input" data-input data-input-cyrillic data-re=".*[а-яА-ЯёЁ]{2,}.*" data-flag="false" data-required="true" maxlength="100" type="text" name="city" placeholder="Город" required>
+						<input class="address__input" data-input data-input-cyrillic data-re=".*[а-яА-ЯёЁ]{2,}.*" data-flag="false" data-required="true" maxlength="100" type="text" name="street" placeholder="Улица" required>
 
 						<div class="address__wrap">
-							<input class="address__input address__input--w50" type="text" name="frontdoor" placeholder="Подъезд">
-							<input class="address__input address__input--w50" type="number" name="index" placeholder="Индекс">
+							<input class="address__input address__input--w50" data-input data-input-frontdoor data-re="\d{1,}" data-flag="false" data-required="true" type="number" name="frontdoor" placeholder="Подъезд" required>
+							<input class="address__input address__input--w50" data-input data-input-index data-re="\d{6}" data-flag="false" data-required="false" type="number" name="index" placeholder="Индекс">
 						</div>
 					</div>
 
-					<button class="btn btn-address" type="submit" title="Нажмите, чтобы подтвердить адрес" disabled>Подтвердить адрес</button>
+					<button class="btn btn-address" data-btn type="submit" title="Нажмите, чтобы подтвердить адрес" disabled>Подтвердить адрес</button>
 				</form><!-- /.address -->
 
-				<form class="bank-card">
+				<form class="bank-card" data-form action="/" method="post" target="_blank">
 					<h5 class="bank-card__title">Способ оплаты</h5>
 
 					<div class="bank-card__wrap">
@@ -180,16 +181,16 @@
 					</div>
 
 					<div class="bank-card__add-payment">
-						<h6 class="bank-card__subtitle">Добавить карту оплаты</h6>
+						<button class="btn btn-bank-card-subtitle" type="button">Добавить карту оплаты</button>
 
 						<div class="bank-card__wrap-inputs">
-							<input class="bank-card__input" type="number" name="number-card" placeholder="Номер карты">
-							<input class="bank-card__input" type="text" name="address" placeholder="Адрес доставки">
-							<input class="bank-card__input" type="text" name="name-card" placeholder="Имя на карте">
-							<input class="bank-card__input" type="number" name="cvv" placeholder="CVV код">
+							<input class="bank-card__input" data-input data-input-number-card data-re="\d{16}" data-flag="false" data-required="true" type="number" name="number-card" placeholder="Номер карты" required>
+							<input class="bank-card__input" data-input data-input-cyrillic data-re=".*[а-яА-ЯёЁ]{2,}.*" data-flag="false" data-required="true" maxlength="400" type="text" name="address" placeholder="Адрес доставки" required>
+							<input class="bank-card__input" data-input data-input-latin data-re=".*[A-Za-zА]{2,}.*" data-flag="false" data-required="true" maxlength="100" type="text" name="name-card" placeholder="Имя на карте" required>
+							<input class="bank-card__input" data-input data-input-сvv data-re="\d{3}" data-flag="false" data-required="true" type="number" name="cvv" placeholder="CVV код" required>
 						</div>
 
-						<button class="btn btn-card-add" type="submit" title="Нажмите, чтобы добавить карту оплаты" disabled>Принять</button>
+						<button class="btn btn-card-add" data-btn type="submit" title="Нажмите, чтобы добавить карту оплаты" disabled>Принять</button>
 					</div>
 
 				</form><!-- /.bank-card -->
@@ -201,7 +202,7 @@
 						<div class="total__line">
 							<div class="total__name">Итого:</div>
 							<div class="total__value">
-								<span class="total__span">0</span>
+								<span class="total__span" id="total-price-products">0</span>
 								₽
 							</div>
 						</div>
@@ -217,13 +218,13 @@
 						<div class="total__line">
 							<div class="total__name">Всего к оплате:</div>
 							<div class="total__value total__value--result">
-								<span class="total__span" id="total-price">0</span>
+								<span class="total__span" id="total-price-and-dostavka">0</span>
 								₽
 							</div>
 						</div>
 					</div>
 
-					<button class="btn btn-order" type="submit" title="Нажмите, чтобы оформить заказ" disabled>Оформить заказ</button>
+					<button class="btn btn-order-total" type="submit" title="Нажмите, чтобы оформить заказ" disabled>Оформить заказ</button>
 				</form><!-- /.total -->
 
 

@@ -12,9 +12,9 @@
 
 					<div class="order-form__left">
 						<h4 class="order-form__title">Контактные данные</h4>
-						<input class="order-form__input" data-input data-input-name data-re=".*[а-яА-ЯёЁ]{2,}.*" data-flag="false" data-required="true" type="text" name="name" maxlength="100" placeholder="Имя" required>
+						<input class="order-form__input" data-input data-input-cyrillic data-re=".*[а-яА-ЯёЁ]{2,}.*" data-flag="false" data-required="true" type="text" name="name" maxlength="100" placeholder="Имя" required>
 						<input class="order-form__input" data-input data-input-tel data-re="\+7\s\(\d{3}\)\s\d{3}\s\-\s\d{2}\s\-\s\d{2}" data-flag="false" data-required="true" type="tel" name="tel" maxlength="11" placeholder="Телефон" required>
-						<input class="order-form__input" data-input data-input-email data-re="^(?!.*@.*@.*$)(?!.*@.*\-\-.*\..*$)(?!.*@.*\-\..*$)(?!.*@.*\-$)(.*@.+(\..{1,11})?)$" data-flag="false" data-required="false" type="email" name="email" maxlength="100" placeholder="Почта">
+						<input class="order-form__input" data-input data-input-email data-re="^(?!.*@.*@.*$)(?!.*@.*\-\-.*\..*$)(?!.*@.*\-\..*$)(?!.*@.*\-$)(.*@.+(\..{1,11})?)$" data-flag="true" data-required="false" type="email" name="email" maxlength="100" placeholder="Почта">
 					</div><!-- /.order-form__left -->
 
 					<div class="order-form__right">
@@ -27,8 +27,8 @@
 
 
 			</form>
-		
-		
+
+
 
 
 		</div><!-- /.order__inner -->

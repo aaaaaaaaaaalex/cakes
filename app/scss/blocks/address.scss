@@ -71,6 +71,14 @@
 			width: 50%;
 			margin-bottom: 0;
 		}
+		&.valid{
+			border-color: #289B00;
+			color: #289B00;
+		}
+		&.invalid{
+			border-color: #DB0000;
+			color: #DB0000;
+		}
 	}
 	&__wrap-inputs{
 		margin-bottom: 50px;

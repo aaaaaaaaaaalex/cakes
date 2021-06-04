@@ -17,6 +17,10 @@
 
 		display: flex;
 		justify-content: space-between;
+
+		&.hidden{
+			display: none;
+		}
 	}
 	&__span{
 		max-width: 117px;
@@ -25,7 +29,7 @@
 		margin-bottom: 120px;
 		display: none;
 
-		padding: 33px 29px 34px;
+		padding: 21px 29px 34px;
 
 		border: 1px solid #E7E7E7;
 		border-radius: 10px;
@@ -33,15 +37,6 @@
 		&.show{
 			display: block;
 		}
-	}
-
-	&__subtitle {
-		margin-bottom: 45px;
-
-		font-size: 16px;
-		font-weight: 600;
-		color: #000;
-		line-height: calc(19.5/16);
 	}
 
 	&__wrap-inputs{
@@ -98,6 +93,14 @@
 		&:focus{
 			outline: none;
 			border-color: #000;
+		}
+		&.valid{
+			border-color: #289B00;
+			color: #289B00;
+		}
+		&.invalid{
+			border-color: #DB0000;
+			color: #DB0000;
 		}
 	}
 }

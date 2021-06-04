@@ -43,20 +43,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-	// CART SHOW
-	let btnsBuy = document.querySelectorAll("[data-cart]");
 
-	let onClickBtn = function(event) {
-		event.preventDefault();
-
-		let cart = document.querySelector("#cart");
-		cart.classList.add("show")
-	};
-
-	for (i=0; i<btnsBuy.length; i++) {
-		let btn = btnsBuy[i];
-		btn.addEventListener("click", onClickBtn);
-	};
 
 
 
@@ -76,9 +63,13 @@ document.addEventListener("DOMContentLoaded", function(){
 	// MASK
 	// MASK TEL
 	jQuery("[data-input-tel]").mask("+7 (999) 999 - 99 - 99", {autoclear: false});
-	// MASK NAME
-	jQuery("[data-input-name]").on('input', function() {
+	// MASK Cyrillic
+	jQuery("[data-input-cyrillic]").on('input', function() {
 		jQuery(this).val(jQuery(this).val().replace(/[^а-яА-ЯёЁ\s]/g, ''));
+	});
+	// MASK LATIN
+	jQuery("[data-input-latin]").on('input', function() {
+		jQuery(this).val(jQuery(this).val().replace(/[^A-Za-zА\s]/g, ''));
 	});
 	// MASK EMAIL
 	jQuery("[data-input-email]").on('input', function() {
@@ -144,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			return this.dataset.flag;
 		}).get();
 
+
 		let getFlagValue = flagValue.every(validFlag);
 
 		function validFlag(n){
@@ -157,8 +149,11 @@ document.addEventListener("DOMContentLoaded", function(){
 	function switchBtn(getFlagValue, btnRelated){
 		if(getFlagValue == true ) {
 			btnRelated.prop("disabled", false).addClass("hover-on");
+			// console.log("кнопка активирована");
 		}else{
 			btnRelated.prop("disabled", true).removeClass("hover-on");
+			// console.log("кнопка деактивирована");
+
 		}
 	};
 
@@ -194,9 +189,102 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+
+
+
+
+
+
+
+	// CART
+
+
+	// Переменные
+	// Все кнопки, которые меняют кол-во товара
+	let btnsChangeQuantity = document.querySelectorAll("[data-btn-change-quantity]");
+	// Корзина
+	let cart = document.querySelector("#cart");
+	// Установим начальное кол-во товара равное 0
+	newQuantity = 0;
+
+
+	// Функция, которая выполняется при клике на кнопку, которая меняет количество товара
+	let clickBtnChangeQuantity = function (event) {
+		// Сохраняем в переменную btnChangeQuantity кнопку по которой кликнули
+		let btnChangeQuantity = event.target;
+
+		// Покажем корзину
+		cart.classList.add("show");
+
+
+		// Сохраним "направление" подсчета в переменную direction
+		let direction = btnChangeQuantity.dataset.direction;
+		// Сохраним "название" товара
+		let direction = btnChangeQuantity.dataset.direction;
+
+		// Увеличим/уменьшим кол-во товара по определенной позиции
+		if (direction === "plus") {
+			// Увеличиваем общее количество товара
+			newQuantity = newQuantity + 1;
+			console.log(newQuantity);
+
+		} else {
+			// Уменьшаем общее количество товара
+
+			// Сначала делаем проверку, будет ли кол-во товара больше 0
+			if ((newQuantity = currentValueInput -1) > 0) {
+				newValue = currentValueInput -1;
+			} else {
+				newValue = 0;
+			}
+		}
+
+		// Посчет общего кол-ва товаров
+		// Запись общего кол-ва товаров в корзину
+
+	};
+
+	// Установим прослушку события клика на кнопки, которые меняют кол-во товара
+	for (i=0; i<btnsChangeQuantity.length; i++) {
+		let btnChangeQuantity = btnsChangeQuantity[i];
+		btnChangeQuantity.addEventListener("click", clickBtnChangeQuantity);
+	};
+
+
+
+
+
+
+
+
+
+
+
+
+	// // CART SHOW
+	// let btnsBuy = document.querySelectorAll("[data-cart]");
+	// let cart = document.querySelector("#cart");
+
+	// let onClickBtn = function(event) {
+	// 	event.preventDefault();
+
+	// 	cart.classList.add("show");
+	// };
+
+	// for (i=0; i<btnsBuy.length; i++) {
+	// 	let btn = btnsBuy[i];
+	// 	btn.addEventListener("click", onClickBtn);
+	// };
+
+
+
+
+
+
 	// COUNTER
 	let btnsCount = document.querySelectorAll(".counter__btn");
-	let spanTotalResult = document.getElementById("total-price");
+	let spanTotalResultProducts = document.getElementById("total-price-products");
+	let spanTotalResult = document.getElementById("total-price-and-dostavka");
 	let spanDostavkaValue = Number(document.getElementById("dostavka").textContent);
 
 
@@ -212,18 +300,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
 			if(spanPriceValue > 0) {
 				priceTotalAll = priceTotalAll + spanPriceValue;
-
-				priceTotalAll = priceTotalAll + spanDostavkaValue;
-				spanTotalResult.textContent = priceTotalAll;
-			} else {
-				spanTotalResult.textContent = 0;
-				console.log("установил в спан тотал 0");
-
 			}
 		};
 
-		// priceTotalAll = priceTotalAll + spanDostavkaValue;
-		// spanTotalResult.textContent = priceTotalAll;
+		spanTotalResultProducts.textContent = priceTotalAll;
+
+
+		// Считаем общую сумму вместе с доставкой
+		if(priceTotalAll > 0) {
+			priceTotalAllAndDostavka = priceTotalAll + spanDostavkaValue;
+			spanTotalResult.textContent = priceTotalAllAndDostavka;
+		} else {
+			spanTotalResult.textContent = 0;
+		}
 	};
 
 
@@ -267,6 +356,89 @@ document.addEventListener("DOMContentLoaded", function(){
 		let btnCount = btnsCount[i];
 		btnCount.addEventListener("click", onCount);
 	};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// OPEN AND CLOSE BANK CARD ADD PAYMENT
+	let blockBankWrapBtns = document.querySelector(".bank-card__wrap");
+	let btnsCardChoice = document.querySelectorAll(".btn-card-choice");
+	let blockAddPayment = document.querySelector(".bank-card__add-payment");
+	let btnsCardChoiceSubtitle = document.querySelector(".btn-bank-card-subtitle");
+
+	let onClickSubtitle = function () {
+		blockAddPayment.classList.remove("show");
+		blockBankWrapBtns.classList.remove("hidden");
+	};
+
+	let onCardChoice = function () {
+		blockBankWrapBtns.classList.add("hidden");
+		blockAddPayment.classList.add("show");
+	};
+
+	for (i=0; i<btnsCardChoice.length; i++) {
+		let btnCardChoice = btnsCardChoice[i];
+		btnCardChoice.addEventListener("click", onCardChoice);
+	};
+
+	btnsCardChoiceSubtitle.addEventListener("click", onClickSubtitle);
+
+
+
+
+
+
+
+
+	// АКТИВАЦИЯ КНОПКИ ОФОРМИТЬ ЗАКАЗ
+	let btnOrder = document.querySelector(".btn-order-total");
+	let modal = document.querySelector(".modal");
+	let inputsModal = modal.querySelectorAll("[data-input]");
+
+	let switchBtnOrder = function (getInputsFlagValue) {
+		if(getInputsFlagValue == true ) {
+			btnOrder.removeAttribute("disabled");
+			btnOrder.classList.add("hover-on");
+		}else{
+			btnOrder.setAttribute("disabled", "");
+			btnOrder.classList.remove("hover-on");
+		}
+	};
+
+	let checkInputsValid = function () {
+
+		let inputsFlagValue = jQuery(inputsModal).map(function() {
+			return this.dataset.flag;
+		}).get();
+
+		let getInputsFlagValue = inputsFlagValue.every(inputsValidFlag);
+
+		function inputsValidFlag(n){
+			return n == "true";
+		};
+
+		switchBtnOrder(getInputsFlagValue);
+	};
+
+	for (i=0; i<inputsModal.length; i++) {
+		let inputModal = inputsModal[i];
+		inputModal.addEventListener("input", checkInputsValid);
+	};
+
 
 
 
