@@ -208,6 +208,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+
+
+
 	// CART
 
 
@@ -231,27 +234,33 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		// Сохраним "направление" подсчета в переменную direction
 		let direction = btnChangeQuantity.dataset.direction;
-		// Сохраним "название" товара
-		let direction = btnChangeQuantity.dataset.direction;
+		// Сохраним "id" инпута, к которому привязан товар в переменную idInput
+		let idInput = btnChangeQuantity.dataset.idInput;
+		// Найдем инпут, в который нужно записать новое значение кол-ва товара
+		let inputProduct = document.getElementById(idInput);
+		// Узнаем текущее значение инпута
+		let currentValueInput = Number(inputProduct.value);
+
 
 		// Увеличим/уменьшим кол-во товара по определенной позиции
 		if (direction === "plus") {
-			// Увеличиваем общее количество товара
-			newQuantity = newQuantity + 1;
-			console.log(newQuantity);
-
+			// Увеличиваем количество товара на 1
+			newQuantity = currentValueInput + 1;
 		} else {
-			// Уменьшаем общее количество товара
-
+			// Уменьшаем общее количество товара на 1
 			// Сначала делаем проверку, будет ли кол-во товара больше 0
-			if ((newQuantity = currentValueInput -1) > 0) {
-				newValue = currentValueInput -1;
+			if (currentValueInput - 1 > 0) {
+				newQuantity = currentValueInput - 1;
 			} else {
-				newValue = 0;
+				newQuantity = 0;
 			}
 		}
+		// Запишем в инпут новое значени кол-ва товара
+		inputProduct.value = newQuantity;
 
-		// Посчет общего кол-ва товаров
+
+
+		// Подсчет общего кол-ва товаров
 		// Запись общего кол-ва товаров в корзину
 
 	};
@@ -287,6 +296,12 @@ document.addEventListener("DOMContentLoaded", function(){
 	// 	let btn = btnsBuy[i];
 	// 	btn.addEventListener("click", onClickBtn);
 	// };
+
+
+
+
+
+
 
 
 
@@ -344,30 +359,30 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 	// Тело счетчика
-	let onCount = function() {
-		let direction = this.dataset.direction;
-		let input = this.parentElement.querySelector(".counter__input");
-		let currentValueInput = Number(input.value);
-		let newValue;
+	// let onCount = function() {
+	// 	let direction = this.dataset.direction;
+	// 	let input = this.parentElement.querySelector(".counter__input");
+	// 	let currentValueInput = Number(input.value);
+	// 	let newValue;
 
-		if (direction === "plus") {
-			newValue = currentValueInput + 1;
-		} else {
-			if ((newValue = currentValueInput -1) > 0) {
-				newValue = currentValueInput -1;
-			} else {
-				newValue = 0;
-			}
-		}
+	// 	if (direction === "plus") {
+	// 		newValue = currentValueInput + 1;
+	// 	} else {
+	// 		if ((newValue = currentValueInput -1) > 0) {
+	// 			newValue = currentValueInput -1;
+	// 		} else {
+	// 			newValue = 0;
+	// 		}
+	// 	}
 
-		input.value = newValue;
-		countPriceTotalOne(input);
-	};
+	// 	input.value = newValue;
+	// 	countPriceTotalOne(input);
+	// };
 
-	for (i=0; i<btnsCount.length; i++) {
-		let btnCount = btnsCount[i];
-		btnCount.addEventListener("click", onCount);
-	};
+	// for (i=0; i<btnsCount.length; i++) {
+	// 	let btnCount = btnsCount[i];
+	// 	btnCount.addEventListener("click", onCount);
+	// };
 
 
 
