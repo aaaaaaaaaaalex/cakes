@@ -2,6 +2,11 @@
 	width: 1170px;
 	height: 500px;
 
+	@media ($xl) {
+		width: 700px;
+		height: 500px;
+	}
+
 	&__path{
 		stroke: $orange;
 		fill: none;
@@ -10,7 +15,7 @@
 
 		animation: svg-dasharray 3s linear 0s infinite normal none;
 
-		
+
 	}
 }
 

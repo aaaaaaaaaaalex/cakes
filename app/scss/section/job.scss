@@ -5,22 +5,31 @@
 		width: 1170px;
 		height: 500px;
 
+		@media ($xl) {
+			margin: 0 auto;
 
+			width: 700px;
+			height: 500px;
+		}
 	}
 	&__item{
 		position: absolute;
 		z-index: 3;
 
 		width: 100%;
-		max-width:160px;
+		max-width: 160px;
 		text-align: center;
-		
+
 		display: flex;
 		flex-direction: column;
 
+		@media ($xl) {
+			max-width: 108px;
+		}
+
 		&:hover ~ .svg > .svg__path{
 			animation-play-state: paused;
-		
+
 		}
 		&--1{
 			top: 0;
@@ -52,7 +61,7 @@
 
 		background-color: $orange;
 
-		
+
 		&--order1{
 			order: 1;
 			margin-bottom: 15px;
@@ -109,6 +118,10 @@
 		display: block;
 	}
 	&__text{
+		font-size: 12px;
+		font-weight: 600;
+		color: rgba(#000, .7);
+		line-height: calc(14,63/12);
 
 		&--order1{
 			order: 1;

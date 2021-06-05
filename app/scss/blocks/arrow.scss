@@ -1,6 +1,5 @@
 .arrow{
 	position: relative;
-	margin: 0 80px;
 	width: 150px;
 	height: 150px;
 	display: flex;
@@ -31,12 +30,12 @@
 			top: 50%;
 			left: 50%;
 			z-index: -1;
-	
+
 			border-radius: 50%;
 			background-color: rgba(241, 184, 152, 0.4);
-	
+
 			transform: translate(-50%, -50%);
-	
+
 			transition: width .35s ease-out, height .35s ease-out;
 		}
 		&:before{
@@ -47,12 +46,12 @@
 			top: 50%;
 			left: 50%;
 			z-index: -2;
-	
+
 			border-radius: 50%;
 			background-color: rgba(241, 184, 152, 0.2);
-	
+
 			transform: translate(-50%, -50%);
-	
+
 			transition: width .35s ease-out, height .35s ease-out;
 		}
 		&:hover{
@@ -66,7 +65,7 @@
 			width: 155px;
 			height: 155px;
 		}
-		
+
 	}
 	&__body{
 		display: block;

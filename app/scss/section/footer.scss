@@ -5,12 +5,48 @@
 		padding: 40px 0;
 		display: flex;
 		justify-content: center;
+
+		@media ($xl) {
+			padding: 20px 0;
+
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	&__social{
+		display: flex;
+		align-items: center;
+
+		@media ($xl) {
+			order: 3;
+		}
+	}
+	&__tel{
+		display: flex;
+		align-items: center;
+
+		@media ($xl) {
+			order: 1;
+		}
+	}
+	&__arrow{
+		margin: 0 80px;
+
+		@media ($xl) {
+			order: 4;
+		}
 	}
 	&__schedule{
 		display: flex;
 		align-items: center;
+
+		@media ($xl) {
+			order: 2;
+		}
 	}
 	&__img{
+		display: block;
+
 		margin-right: 24px;
 	}
 	&__time{

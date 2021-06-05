@@ -1,10 +1,9 @@
 .social{
 	display: flex;
-	align-items: center;
 
 	&__link{
 		margin-right: 30px;
-	
+
 		&--mr0{
 			margin-right: 0;
 		}
@@ -22,7 +21,7 @@
 		fill: #F1B898;
 
 		transition: fill .2s ease-out;
-		
+
 		&:hover{
 			fill: #FFD2B8;
 		}

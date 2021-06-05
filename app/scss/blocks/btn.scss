@@ -21,6 +21,11 @@
 			color: #D24C00;
 			box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.35);
 		}
+
+		@media ($xl) {
+			font-size: 12px;
+
+		}
 	}
 	&-buy{
 		padding: .8em 4em;

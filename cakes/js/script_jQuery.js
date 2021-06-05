@@ -47,16 +47,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		let blockBg = document.querySelector(".intro__wrap--1");
 		blockBg.classList.add("scale-intro");
 	};
-	setTimeout(addClass, 700);
-
-
-
-
-
-
-
-
-
+	setTimeout(addClass, 800);
 
 
 

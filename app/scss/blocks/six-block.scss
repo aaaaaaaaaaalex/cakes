@@ -8,6 +8,10 @@
 		padding: 0 35px;
 		margin-bottom: 120px;
 
+		@media ($xl) {
+			margin-bottom: 45px;
+
+		}
 		@media ($md) {
 			width: 50%;
 			margin-bottom: 35px;
@@ -24,9 +28,9 @@
 		font-weight: 500;
 		color: $black;
 
-		// @media ($md) {
-		// 	font-size: 17px;
-		// }
+		@media ($xl) {
+			font-size: 15px;
+		}
 		// @media ($sm) {
 		// 	font-size: 15px;
 		// }
@@ -42,9 +46,9 @@
 		font-size: 12px;
 		color: rgba($black, .7);
 
-		// @media ($md) {
-		// 	font-size: 15px;
-		// }
+		@media ($xl) {
+			font-size: 11px;
+		}
 		// @media ($sm) {
 		// 	font-size: 14px;
 		// }
@@ -57,5 +61,9 @@
 
 		font-size: 16px;
 		color: $orange;
+
+		@media ($xl) {
+			font-size: 14px;
+		}
 	}
 }

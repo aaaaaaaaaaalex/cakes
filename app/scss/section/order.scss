@@ -4,16 +4,27 @@
 		border: 3px solid rgba($orange, .7);
 		box-shadow: 0px 0px 100px 15px rgba(253, 119, 43, 0.1);
 		border-radius: 40px;
+
+
+		@media ($xl) {
+			padding: 30px;
+			border-radius: 20px;
+		}
 	}
 	&__header{
 		text-align: center;
 	}
 	&__title{
 		margin-bottom: 10px;
-		
+
 		font-size: 34px;
 		font-weight: 600;
 		color: #000;
+
+		@media ($xl) {
+			font-size: 28px;
+
+		}
 	}
 	&__subtitle{
 		margin-bottom: 80px;
@@ -22,5 +33,11 @@
 		font-size: 16px;
 		color: #000;
 
+		@media ($xl) {
+			margin-bottom: 50px;
+
+			font-size: 15px;
+
+		}
 	}
 }

@@ -4,6 +4,14 @@
 
 	transition: transform .2s ease-out;
 
+	@media ($xl) {
+		transform: scale(.7);
+
+		&:hover{
+			transform: scale(.75);
+		}
+
+	}
 	&:hover{
 		transform: scale(1.07);
 	}
@@ -55,9 +63,9 @@
 		margin: 0 auto 55px;
 
 
-		// @media ($md) {
-		// 	margin-bottom: 25px;
-		// }
+		@media ($xl) {
+			margin-bottom: 20px;
+		}
 		// @media ($usm) {
 		// 	margin-bottom: 10px;
 		// }
