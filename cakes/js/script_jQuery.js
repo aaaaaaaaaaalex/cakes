@@ -213,15 +213,25 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// CART
 
-
 	// Переменные
 	// Все кнопки, которые меняют кол-во товара
 	let btnsChangeQuantity = document.querySelectorAll("[data-btn-change-quantity]");
 	// Корзина
-	let cart = document.querySelector("#cart");
-	// Установим начальное кол-во товара равное 0
+	let cart = document.querySelector("[data-cart]");
+	// Найдем span корзины
+	let spanCart = document.querySelector("[data-cart-count]");
+	// Установим начальное кол-во одного товара в инпуте равное 0
 	newQuantity = 0;
-
+	// Найдем все инпуты, по которым нужно считать сумму
+	let counterInputs = document.querySelectorAll("[data-counter-input]");
+	// Найдем все спаны, по которым нужно считать общую сумму стоимости всех товаров
+	let spansPriceProduct = document.querySelectorAll("[data-price-product]");
+	// Найдем главный спан, в который нужно записывать общую сумму стоимости всех товаров
+	let spanPriceTotal = document.querySelector("[data-price-total]");
+	// Найдем самый главный спан, в который нужно записывать общую сумму стоимости всех товаров вместе с доставкой
+	let spanPriceTotalAndDostavka = document.querySelector("[data-price-total-and-dostavka]");
+	// Сохраним значение доставки в перeменную spanDostavkaValue
+	let spanDostavkaValue = Number(document.querySelector("[data-price-dostavka]").textContent);
 
 	// Функция, которая выполняется при клике на кнопку, которая меняет количество товара
 	let clickBtnChangeQuantity = function (event) {
@@ -231,7 +241,6 @@ document.addEventListener("DOMContentLoaded", function(){
 		// Покажем корзину
 		cart.classList.add("show");
 
-
 		// Сохраним "направление" подсчета в переменную direction
 		let direction = btnChangeQuantity.dataset.direction;
 		// Сохраним "id" инпута, к которому привязан товар в переменную idInput
@@ -240,7 +249,6 @@ document.addEventListener("DOMContentLoaded", function(){
 		let inputProduct = document.getElementById(idInput);
 		// Узнаем текущее значение инпута
 		let currentValueInput = Number(inputProduct.value);
-
 
 		// Увеличим/уменьшим кол-во товара по определенной позиции
 		if (direction === "plus") {
@@ -255,145 +263,58 @@ document.addEventListener("DOMContentLoaded", function(){
 				newQuantity = 0;
 			}
 		}
-		// Запишем в инпут новое значени кол-ва товара
+		// Запишем в инпут новое значение кол-ва товара
 		inputProduct.value = newQuantity;
 
-
-
 		// Подсчет общего кол-ва товаров
-		// Запись общего кол-ва товаров в корзину
+		// Установим стартовое значение суммы кол-ва всех товаров в ноль
+		let newSum = 0;
+		// Пройдем по инпутам в цикле, суммируя их значения
+		for (i=0; i<counterInputs.length; i++) {
+			// Coхраним текущее значение инпута в переменную counterInputValue
+			let counterInputValue = Number(counterInputs[i].value);
+			newSum = newSum + counterInputValue;
+		};
 
+		// Запишем общее кол-во товаров в корзину
+		// Запишем сумму кол-ва товаров в спан корзины
+		spanCart.textContent = newSum;
+
+		// Подсчитаем сумму по отдельному продукту
+		let priceProduct = Number(inputProduct.dataset.price);
+		// Найдем спан, в который будем записывать сумму по отдельному продукту
+		let spanPriceProduct = inputProduct.closest("[data-item]").querySelector("[data-price-product]");
+		// Подсчитаем сумму по отдельному продукту
+		newPriceProduct = inputProduct.value * priceProduct;
+		// Запишем сумму по отдельному продукту в спан продукта
+		spanPriceProduct.textContent = newPriceProduct;
+
+		// Подсчитаем сумму по всем продуктам
+		// Установим стартовое значение суммы стоимости всех товаров в ноль
+		let newPriceTotal = 0;
+		// Пройдем по спанам с суммой стоимости по отдельному товару в цикле, суммируя их значения
+		for (i=0; i<spansPriceProduct.length; i++) {
+			// Coхраним текущее значение спана в переменную spanPriceProductValue
+			let spanPriceProductValue = Number(spansPriceProduct[i].textContent);
+			newPriceTotal = newPriceTotal + spanPriceProductValue;
+		};
+		// Запишем сумму по стоимости по всем продуктам в главный спан
+		spanPriceTotal.textContent = newPriceTotal;
+
+		// Считаем общую сумму стоимости всех товаров вместе с доставкой
+		if(newPriceTotal > 0) {
+			newPriceTotalAndDostavka = newPriceTotal + spanDostavkaValue;
+		} else {
+			newPriceTotalAndDostavka = 0;
+		}
+		// Запишем сумму по стоимости по всем продуктам вместе с доставкой в самый главный спан
+		spanPriceTotalAndDostavka.textContent = newPriceTotalAndDostavka;
 	};
-
 	// Установим прослушку события клика на кнопки, которые меняют кол-во товара
 	for (i=0; i<btnsChangeQuantity.length; i++) {
 		let btnChangeQuantity = btnsChangeQuantity[i];
 		btnChangeQuantity.addEventListener("click", clickBtnChangeQuantity);
 	};
-
-
-
-
-
-
-
-
-
-
-
-
-	// // CART SHOW
-	// let btnsBuy = document.querySelectorAll("[data-cart]");
-	// let cart = document.querySelector("#cart");
-
-	// let onClickBtn = function(event) {
-	// 	event.preventDefault();
-
-	// 	cart.classList.add("show");
-	// };
-
-	// for (i=0; i<btnsBuy.length; i++) {
-	// 	let btn = btnsBuy[i];
-	// 	btn.addEventListener("click", onClickBtn);
-	// };
-
-
-
-
-
-
-
-
-
-
-
-
-	// COUNTER
-	let btnsCount = document.querySelectorAll(".counter__btn");
-	let spanTotalResultProducts = document.getElementById("total-price-products");
-	let spanTotalResult = document.getElementById("total-price-and-dostavka");
-	let spanDostavkaValue = Number(document.getElementById("dostavka").textContent);
-
-
-
-	// Считаем сумму по всем продуктам
-	let countPriceTotalAll = function() {
-		let spansPriceTotalAll = document.querySelectorAll(".modal__price-total");
-
-		priceTotalAll = 0;
-
-		for (i=0; i<spansPriceTotalAll.length; i++) {
-			let spanPriceValue = Number(spansPriceTotalAll[i].textContent);
-
-			if(spanPriceValue > 0) {
-				priceTotalAll = priceTotalAll + spanPriceValue;
-			}
-		};
-
-		spanTotalResultProducts.textContent = priceTotalAll;
-
-
-		// Считаем общую сумму вместе с доставкой
-		if(priceTotalAll > 0) {
-			priceTotalAllAndDostavka = priceTotalAll + spanDostavkaValue;
-			spanTotalResult.textContent = priceTotalAllAndDostavka;
-		} else {
-			spanTotalResult.textContent = 0;
-		}
-	};
-
-
-
-	// Считаем сумму по отдельному продукту
-	let countPriceTotalOne = function(input) {
-		let currentValueInput = input.value;
-		let сost = Number(input.dataset.price);
-		let spanPriceTotal = input.closest(".modal__item").querySelector(".modal__price-total");
-
-		let totalPrice = currentValueInput * сost;
-		spanPriceTotal.textContent = totalPrice;
-
-		countPriceTotalAll();
-	};
-
-
-
-	// Тело счетчика
-	// let onCount = function() {
-	// 	let direction = this.dataset.direction;
-	// 	let input = this.parentElement.querySelector(".counter__input");
-	// 	let currentValueInput = Number(input.value);
-	// 	let newValue;
-
-	// 	if (direction === "plus") {
-	// 		newValue = currentValueInput + 1;
-	// 	} else {
-	// 		if ((newValue = currentValueInput -1) > 0) {
-	// 			newValue = currentValueInput -1;
-	// 		} else {
-	// 			newValue = 0;
-	// 		}
-	// 	}
-
-	// 	input.value = newValue;
-	// 	countPriceTotalOne(input);
-	// };
-
-	// for (i=0; i<btnsCount.length; i++) {
-	// 	let btnCount = btnsCount[i];
-	// 	btnCount.addEventListener("click", onCount);
-	// };
-
-
-
-
-
-
-
-
-
-
-
 
 
 
