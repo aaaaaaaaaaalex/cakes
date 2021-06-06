@@ -29,12 +29,12 @@
 
 			font-size: 30px;
 		}
-		// @media ($sm) {
-		// 	font-size: 22px;
-		// }
-		// @media ($usm) {
-		// 	font-size: 20px;
-		// }
+		@media ($md) {
+			margin-bottom: 30px;
+
+			font-size: 18px;
+		}
+
 	}
 	&__subtitle{
 		margin-bottom: 30px;

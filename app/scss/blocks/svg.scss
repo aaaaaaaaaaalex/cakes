@@ -4,7 +4,9 @@
 
 	@media ($xl) {
 		width: 700px;
-		height: 500px;
+	}
+	@media ($md) {
+		width: 290px;
 	}
 
 	&__path{
@@ -15,7 +17,18 @@
 
 		animation: svg-dasharray 3s linear 0s infinite normal none;
 
+		&--1{
+			@media ($md) {
+				display: none;
+			}
+		}
+		&--2{
+			display: none;
 
+			@media ($md) {
+				display: block;
+			}
+		}
 	}
 }
 

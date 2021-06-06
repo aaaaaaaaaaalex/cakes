@@ -4,6 +4,13 @@
 	width: 100%;
 	max-width: 430px;
 
+	@media ($xl) {
+		margin-bottom: 70px;
+	}
+	@media ($md) {
+		margin-bottom: 30px;
+	}
+
 	&__title{
 		margin-bottom: 50px;
 
@@ -11,6 +18,15 @@
 		font-weight: 600;
 		color: #000;
 		line-height: calc(19.5/16);
+
+		@media ($xl) {
+			margin-bottom: 30px;
+
+			font-size: 15px;
+		}
+		@media ($md) {
+			margin-bottom: 15px;
+		}
 	}
 
 
@@ -51,6 +67,7 @@
 		color: #363636;
 		line-height: calc(17.07/14);
 
+		background-color: transparent;
 		border-bottom: 1px solid #7D7D7D;
 
 		&::placeholder{
@@ -82,6 +99,13 @@
 	}
 	&__wrap-inputs{
 		margin-bottom: 50px;
+
+		@media ($xl) {
+			margin-bottom: 30px;
+		}
+		@media ($md) {
+			margin-bottom: 20px;
+		}
 	}
 	&__wrap{
 		display: flex;

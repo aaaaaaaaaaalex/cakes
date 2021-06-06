@@ -31,12 +31,9 @@
 		@media ($xl) {
 			font-size: 15px;
 		}
-		// @media ($sm) {
-		// 	font-size: 15px;
-		// }
-		// @media ($usm) {
-		// 	font-size: 13px;
-		// }
+		@media ($md) {
+			font-size: 13px;
+		}
 	}
 	&__text{
 		width: 100%;
@@ -49,12 +46,9 @@
 		@media ($xl) {
 			font-size: 11px;
 		}
-		// @media ($sm) {
-		// 	font-size: 14px;
-		// }
-		// @media ($usm) {
-		// 	font-size: 13px;
-		// }
+		@media ($md) {
+			font-size: 10px;
+		}
 	}
 	&__price{
 		margin-bottom: 10px;
@@ -64,6 +58,9 @@
 
 		@media ($xl) {
 			font-size: 14px;
+		}
+		@media ($md) {
+			font-size: 12px;
 		}
 	}
 }

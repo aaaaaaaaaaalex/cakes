@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		let blockBg = document.querySelector(".intro__wrap--1");
 		blockBg.classList.add("scale-intro");
 	};
-	setTimeout(addClass, 800);
+	setTimeout(addClass, 900);
 
 
 
@@ -43,9 +43,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 	// SVG
-	let path = document.querySelector(".svg__path");
+	let pathLg = document.querySelector(".svg__path--1");
+	let pathSm = document.querySelector(".svg__path--2");
 
-	path.setAttribute("d", "M 70 70C 125 0 125 430 250 430C 380 430 400 100 650 70C 880 50 880 500 1100 350" );
+	pathLg.setAttribute("d", "M 70 70C 125 0 125 430 250 430C 380 430 400 100 650 70C 880 50 880 500 1100 350" );
+	pathSm.setAttribute("d", "M 150 60C 585 50 970 100 970 175C 970 350 200 225 200 350C 200 450 585 425 900 470" );
 
 
 
@@ -306,15 +308,19 @@ document.addEventListener("DOMContentLoaded", function(){
 	let btnsCardChoice = document.querySelectorAll(".btn-card-choice");
 	let blockAddPayment = document.querySelector(".bank-card__add-payment");
 	let btnsCardChoiceSubtitle = document.querySelector(".btn-bank-card-subtitle");
+	let title = document.querySelector(".bank-card__title");
 
 	let onClickSubtitle = function () {
 		blockAddPayment.classList.remove("show");
 		blockBankWrapBtns.classList.remove("hidden");
+		title.classList.remove("card-active");
+
 	};
 
 	let onCardChoice = function () {
 		blockBankWrapBtns.classList.add("hidden");
 		blockAddPayment.classList.add("show");
+		title.classList.add("card-active");
 	};
 
 	for (i=0; i<btnsCardChoice.length; i++) {

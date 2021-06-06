@@ -9,6 +9,10 @@
 	justify-content: center;
 	align-items: center;
 
+	transform: translate(0, -50%);
+	@media ($md) {
+		right: 0;
+	}
 	&.show{
 		display: block;
 	}
@@ -39,6 +43,10 @@
 		}
 		&:active{
 			background-color: #E85400;
+		}
+		@media ($md) {
+			width: 65px;
+			height: 65px;
 		}
 
 	}

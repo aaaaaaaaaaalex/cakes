@@ -18,7 +18,10 @@
 		@media ($xl) {
 			font-size: 18px;
 			margin-right: 35px;
-
+		}
+		@media ($md) {
+			font-size: 10px;
+			margin-right: 0px;
 		}
 
 	}

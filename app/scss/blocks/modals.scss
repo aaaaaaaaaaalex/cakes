@@ -22,9 +22,6 @@
 		width: 100%;
 		margin: auto;
 
-		// max-width: 280px;
-		// max-height: 420px;
-		// padding: 31px 31px 0;
 
 		max-width: 1600px;
 		min-height: 1200px;
@@ -32,13 +29,21 @@
 
 		overflow: auto;
 
-		// @media ($xl) {
-		// 	max-width: 1590px;
-		// 	max-height: 1500px;
-		// 	padding: 80px 105px 81px;
-		// }
-
+		border-radius: 5px;
 		background: local #fff url("../img/cart/cart-bg.png") top left/60% 120% no-repeat;
+
+		@media ($xxxl) {
+			padding: 65px 25px;
+		}
+		@media ($xl) {
+			padding: 25px;
+			background: local #fff url("../img/cart/cart-bg.png") top left/100% 120% no-repeat;
+		}
+		@media ($md) {
+			padding: 40px 5px 5px;
+			background: #fff url("../img/cart/bg-white.png");
+
+		}
 
 	}
 	&__close{
@@ -46,16 +51,10 @@
 		top: 20px;
 		right: 20px;
 
-		width: 34px;
-		height: 34px;
 
-		padding: 0;
-		background: 0;
-		border: 0;
-
-		&:hover{
-			transform:translateY(-3px);
-			transition: transform .2s linear;
+		@media ($md) {
+			top: 10px;
+			right: 10px;
 		}
 	}
 	&__content{
@@ -64,10 +63,24 @@
 
 		display: flex;
 		justify-content: space-between;
+
+		@media ($xl) {
+			flex-direction: column;
+		}
 	}
 	&__left{
 		width: 100%;
 		max-width: 720px;
+
+		@media ($xxxl) {
+			max-width: 520px;
+		}
+		@media ($xl) {
+			margin-bottom: 70px;
+		}
+		@media ($md) {
+			margin-bottom: 30px;
+		}
 	}
 	&__right{
 		width: 100%;
@@ -75,20 +88,41 @@
 	}
 	&__item{
 		padding: 42px 0 35px;
-		// width: 100%;
-		// max-width: 720px;
 
 		display: flex;
 		align-items: center;
 
 		border-bottom: 2px solid rgba(#E7E7E7, .6);
+
+		@media ($xl) {
+			padding: 19px 0 0;
+		}
+		@media ($md) {
+			flex-direction: column;
+
+			padding: 19px 0;
+		}
 	}
 	&__wrap{
 		margin:0 46px 0 18px;
+
+		@media ($md) {
+			margin: 0;
+		}
 	}
 	&__info{
-		width: 222px;
 		margin-right: 55px;
+		width: 222px;
+
+		@media ($xxxl) {
+			margin-right: 20px;
+			width: 161px;
+
+		}
+		@media ($md) {
+			margin: 0 0 20px;
+			text-align: center;
+		}
 	}
 	&__name {
 		margin-bottom: 10px;
@@ -97,17 +131,29 @@
 		font-weight: 600;
 		color: #000;
 		line-height: calc(26.82/22);
+
+		@media ($xxxl) {
+			font-size: 16px;
+		}
 	}
 	&__massa {
 		font-size: 18px;
 		color: #000;
 		line-height: calc(25.2/18);
+
+		@media ($xxxl) {
+			font-size: 15px;
+		}
 	}
 	&__kg {
 		font-size: 18px;
 		font-weight: 600;
 		color: #000;
 		line-height: calc(25.2/18);
+
+		@media ($xxxl) {
+			font-size: 15px;
+		}
 	}
 	&__price{
 		margin-left: 80px;
@@ -116,6 +162,16 @@
 		font-weight: 600;
 		color: #FD772B;
 		line-height: calc(30.48/25);
+		white-space: nowrap;
+
+		@media ($xxxl) {
+			margin-left: 20px;
+
+			font-size: 18px;
+		}
+		@media ($md) {
+			margin: 20px 0 0 0;
+		}
 	}
 
 

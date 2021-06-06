@@ -1,47 +1,114 @@
 .bank-card {
 
+	position: relative;
+
 	width: 100%;
 	max-width: 430px;
 
 	&__title {
-		margin-bottom: 50px;
+		margin-bottom: 240px;
 
 		font-size: 16px;
 		font-weight: 600;
 		color: #000;
 		line-height: calc(19.5/16);
+
+		@media ($xl) {
+			margin-bottom: 190px;
+		}
+		@media ($md) {
+			margin-bottom: 150px;
+		}
+
+		transition: margin-bottom .2s ease-out;
+
+		&.card-active{
+			margin-bottom: 534px;
+
+			@media ($xl) {
+				margin-bottom: 464px;
+			}
+			@media ($md) {
+				margin-bottom: 350px;
+			}
+		}
 	}
 
 	&__wrap{
-		margin-bottom: 120px;
-
 		display: flex;
 		justify-content: space-between;
 
+
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		z-index: 0;
+		opacity: 1;
+
+		transition: opacity .2s ease-out, z-index 1s ease-out;
+
 		&.hidden{
-			display: none;
+			z-index: -1;
+			opacity: 0;
+
+		}
+		@media ($xl) {
+			top: 50px;
+		}
+		@media ($md) {
+			top: 35px;
+			flex-wrap: wrap;
 		}
 	}
 	&__span{
 		max-width: 117px;
+
+		@media ($md) {
+			margin-left: 10px;
+			max-width: 180px;
+
+
+		}
 	}
 	&__add-payment {
-		margin-bottom: 120px;
-		display: none;
-
 		padding: 21px 29px 34px;
 
 		border: 1px solid #E7E7E7;
 		border-radius: 10px;
 
+
+
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		z-index: -1;
+		opacity: 0;
+
+		transition: opacity .2s ease-out, z-index 1s ease-out;
+
 		&.show{
-			display: block;
+			z-index: 0;
+			opacity: 1;
+		}
+		@media ($xl) {
+			top: 50px;
+		}
+		@media ($md) {
+			top: 35px;
+			padding: 10px;
 		}
 	}
 
 	&__wrap-inputs{
 		margin-bottom: 30px;
 
+		@media ($xl) {
+			margin-bottom: 20px;
+		}
 	}
 
 	// Общий сброс стилей input
@@ -82,6 +149,8 @@
 		line-height: calc(17.07/14);
 
 		border-bottom: 1px solid #7D7D7D;
+		background-color: transparent;
+
 
 		&::placeholder{
 			font-size: 14px;

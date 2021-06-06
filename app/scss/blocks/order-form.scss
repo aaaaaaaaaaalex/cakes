@@ -2,6 +2,10 @@
 	&__wrap{
 		display: flex;
 		flex-wrap: nowrap;
+
+		@media ($md) {
+			flex-wrap: wrap;
+		}
 	}
 	&__left{
 		width: 38%;
@@ -10,10 +14,19 @@
 		@media ($xl) {
 			padding-right: 0;
 		}
+		@media ($md) {
+			width: 100%;
+		}
 	}
 	&__right{
 		width: 62%;
 		padding-left: 33px;
+
+		@media ($md) {
+			width: 100%;
+			padding-left: 0px;
+
+		}
 	}
 	&__title{
 		margin-bottom: 50px;
@@ -26,6 +39,11 @@
 			margin-bottom: 30px;
 
 			font-size: 15px;
+		}
+		@media ($md) {
+			margin-bottom: 20px;
+
+			font-size: 13px;
 		}
 	}
 	&__input{
@@ -45,6 +63,10 @@
 
 		@media ($xl) {
 			font-size: 15px;
+		}
+		@media ($md) {
+			padding: 8px;
+			font-size: 13px;
 		}
 
 		&:focus{
@@ -68,5 +90,10 @@
 	&__textarea{
 		height: 120px;
 		resize: none;
+	}
+	&__btn-wrap{
+		@media ($md) {
+			text-align: center;
+		}
 	}
 }

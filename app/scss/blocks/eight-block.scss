@@ -2,7 +2,6 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	// justify-content: center;
 
 	&__col{
 		width: 25%;
@@ -10,15 +9,14 @@
 
 		@media ($md) {
 			width: 50%;
+			padding: 0px;
+
 		}
 		@media ($sm) {
 			width: 100%;
 		}
 	}
 	&__item{
-		// padding: 30px 0 20px;
-		// width: 100%;
-		// max-width: 220px;
 
 		text-align: center;
 
@@ -32,15 +30,22 @@
 		justify-content: center;
 		height: 100%;
 		min-height: 160px;
+
 	}
 	&__img{
 		display: block;
 	}
 	&__text{
-		// margin-top: 10px;
 
 		font-size: 16px;
 		font-weight: 500;
 		color: $black;
+
+		@media ($xl) {
+			font-size: 15px;
+		}
+		@media ($md) {
+			font-size: 12px;
+		}
 	}
 }
