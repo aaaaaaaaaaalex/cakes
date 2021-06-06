@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		let blockBg = document.querySelector(".intro__wrap--1");
 		blockBg.classList.add("scale-intro");
 	};
-	setTimeout(addClass, 900);
+	setTimeout(addClass, 1000);
 
 
 
@@ -177,6 +177,23 @@ document.addEventListener("DOMContentLoaded", function(){
 	});
 	jQuery(".modal__dialog").on("click", function(event) {
 		event.stopPropagation();
+	});
+
+
+	// Modal Plug
+
+	$("[data-close]").on("click", function(event) {
+		event.preventDefault();
+		let modalParent = $(this).parents(".modal-plug");
+		modalParent.removeClass("show");
+		$("body").removeClass("no-scroll");
+	});
+	$(".modal-plug").on("click", function(event) {
+		$(this).removeClass("show");
+		$("body").removeClass("no-scroll");
+	});
+	$(".modal-plug__dialog").on("click", function(event) {
+		event.stopPropagation()
 	});
 
 
